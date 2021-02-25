@@ -3,7 +3,7 @@ package com.example.jpa;
 import com.example.jpa.pojo.User;
 import com.example.jpa.repository.UserRepository;
 import com.example.jpa.service.UserService;
-import com.example.jpa.service.UserServiceImpl;
+//import com.example.jpa.service.UserServiceImpl;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -28,9 +28,7 @@ class JpaApplicationTests {
 
     @Test
     public void test1(){
-        UserService userService = new UserServiceImpl(userRepository);
-        Optional<User> user = userService.getByUsername("Jay2221");
-//        System.out.println(user.get().getCreateTime());
+        System.out.println(userRepository.findAll());
     }
 
 }
