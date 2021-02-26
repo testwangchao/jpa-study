@@ -1,9 +1,13 @@
 package com.example.jpa.service;
 
+import com.example.jpa.exceptions.NotFoundException;
+import com.example.jpa.param.RoleInfo;
+import com.example.jpa.pojo.User;
 import com.example.jpa.pojo.UserRole;
 import com.example.jpa.repository.UserRoleRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -20,8 +24,8 @@ public class UserRoleServiceImpl implements UserRoleService{
     }
 
     @Override
-    public Optional<UserRole> getByRoleId(Integer roleId) {
-        return userRoleRepository.findByRoleId(roleId);
+    public Optional<List<UserRole>> getByRoleId(Integer roleId) {
+        return userRoleRepository.findAllById(roleId);
     }
 
     @Override
@@ -30,6 +34,16 @@ public class UserRoleServiceImpl implements UserRoleService{
         userRole.setUserId(userId);
         userRole.setRoleId(roleId);
         userRoleRepository.save(userRole);
+    }
+
+    @Override
+    public List<UserRole> findUserByRoleId(int roleId) {
+        int userId = getUserRoleByRoleId(roleId).getUserId();
+        return userRoleRepository.fin;
+    }
+
+    public UserRole getUserRoleByRoleId(int roleId) {
+        return getByRoleId(roleId).orElseThrow(() -> new NotFoundException(String.format("角色ID: %s不存在", roleId)));
     }
 
 }

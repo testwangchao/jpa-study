@@ -1,5 +1,6 @@
 package com.example.jpa.service;
 import com.example.jpa.exceptions.NotFoundException;
+import com.example.jpa.param.RoleInfo;
 import com.example.jpa.param.UserInfo;
 import com.example.jpa.pojo.User;
 //import org.springframework.beans.factory.annotation.Autowired;
@@ -16,11 +17,12 @@ import java.util.Optional;
 @Slf4j
 @Service
 public class UserServiceImpl implements UserService{
-//    @Autowired
     public UserRepository userRepository;
+    public UserRoleService userRoleService;
+    public UserServiceImpl(UserRepository userRepository, UserRoleService userRoleService){
 
-    public UserServiceImpl(UserRepository userRepository){
         this.userRepository = userRepository;
+        this.userRoleService = userRoleService;
     }
 
     @Override
@@ -79,4 +81,6 @@ public class UserServiceImpl implements UserService{
         createUser(userInfo);
         deleteByUserId(userInfo.getUserId());
     }
+
+
 }

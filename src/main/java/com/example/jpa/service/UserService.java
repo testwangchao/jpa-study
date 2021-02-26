@@ -1,5 +1,6 @@
 package com.example.jpa.service;
 
+import com.example.jpa.param.RoleInfo;
 import com.example.jpa.param.UserInfo;
 import com.example.jpa.pojo.User;
 import com.example.jpa.pojo.User2;
@@ -28,4 +29,6 @@ public interface UserService {
     User2 convertTo(User user);
 
     void deleteCreate(@NonNull UserInfo userInfo);
+
+
 }
