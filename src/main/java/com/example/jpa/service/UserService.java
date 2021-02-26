@@ -8,4 +8,7 @@ import java.util.Optional;
 public interface UserService {
     @NonNull
     Optional<User> getByUsername(@NonNull String username);
+
+    @NonNull
+    User getByUsernameNonNull(@NonNull String username);
 }
