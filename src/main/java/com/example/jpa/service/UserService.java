@@ -1,8 +1,10 @@
 package com.example.jpa.service;
 
+import com.example.jpa.param.UserInfo;
 import com.example.jpa.pojo.User;
 import org.springframework.lang.NonNull;
 
+import java.util.List;
 import java.util.Optional;
 
 public interface UserService {
@@ -11,4 +13,14 @@ public interface UserService {
 
     @NonNull
     User getByUsernameNonNull(@NonNull String username);
+
+    @NonNull
+    Optional<Integer> deleteByUserId(@NonNull int userId);
+
+    void deleterUser(@NonNull int userId);
+
+    @NonNull
+    List<User> getAllUsers();
+
+    void createUser(@NonNull UserInfo userInfo);
 }
