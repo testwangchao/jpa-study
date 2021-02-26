@@ -3,6 +3,7 @@ import com.example.jpa.exceptions.NotFoundException;
 import com.example.jpa.param.UserInfo;
 import com.example.jpa.pojo.User;
 //import org.springframework.beans.factory.annotation.Autowired;
+import com.example.jpa.pojo.User2;
 import com.example.jpa.repository.UserRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,7 +25,7 @@ public class UserServiceImpl implements UserService{
 
     @Override
     public Optional<User> getByUsername(String username) {
-        return Optional.empty();
+        return userRepository.findByName(username);
     }
 
     @Override
@@ -35,6 +36,7 @@ public class UserServiceImpl implements UserService{
     @Transactional
     @Override
     public Optional<Integer> deleteByUserId(int userId) {
+
         try {
             userRepository.deleteById(userId);
         } catch (org.springframework.dao.EmptyResultDataAccessException e){
@@ -44,6 +46,7 @@ public class UserServiceImpl implements UserService{
     }
 
     public void deleterUser(int userId){
+
         deleteByUserId(userId).orElseThrow(() -> new NotFoundException("没有找到该用户！"));
     }
 
@@ -58,7 +61,22 @@ public class UserServiceImpl implements UserService{
         User user = new User();
         user.setName(userInfo.getUserName());
         userRepository.save(user);
-//        int a = 1/0;
-//        throw new IllegalArgumentException("大萨达");
+
+    }
+
+    @Override
+    public User2 convertTo(User user) {
+        User2 user2 = new User2();
+        User user1 = getByUsernameNonNull(user.getName());
+        org.springframework.beans.BeanUtils
+                .copyProperties(user1, user2);
+        return user2;
+    }
+
+    @Transactional
+    @Override
+    public void deleteCreate(UserInfo userInfo) {
+        createUser(userInfo);
+        deleteByUserId(userInfo.getUserId());
     }
 }

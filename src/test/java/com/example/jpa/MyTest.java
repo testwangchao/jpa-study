@@ -146,6 +146,10 @@ public class MyTest {
     @Test
     public void test10() {
         User2 user2 = new User2(16, "姜有琪",  "jiang.you.qi","k123456", 12, false);
-        System.out.println(user2);
+        User user = new User();
+        org.springframework.beans.BeanUtils
+                .copyProperties(user2, user);
+        System.out.println(user);
+
     }
 }

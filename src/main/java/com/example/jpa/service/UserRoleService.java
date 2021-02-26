@@ -12,4 +12,5 @@ public interface UserRoleService {
     @NonNull
     Optional<UserRole> getByRoleId(@NonNull Integer roleId);
 
+    void setId(@NonNull int userId, @NonNull int roleId);
 }

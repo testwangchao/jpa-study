@@ -2,6 +2,7 @@ package com.example.jpa.service;
 
 import com.example.jpa.param.UserInfo;
 import com.example.jpa.pojo.User;
+import com.example.jpa.pojo.User2;
 import org.springframework.lang.NonNull;
 
 import java.util.List;
@@ -23,4 +24,8 @@ public interface UserService {
     List<User> getAllUsers();
 
     void createUser(@NonNull UserInfo userInfo);
+
+    User2 convertTo(User user);
+
+    void deleteCreate(@NonNull UserInfo userInfo);
 }
