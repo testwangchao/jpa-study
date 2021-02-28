@@ -2,13 +2,14 @@ package com.example.jpa;
 
 import com.example.jpa.pojo.User;
 import com.example.jpa.pojo.User2;
-import com.example.jpa.utils.Result;
-import com.example.jpa.utils.ResultUtils;
-import jdk.nashorn.internal.runtime.regexp.joni.constants.OPCode;
-import com.alibaba.fastjson.JSONObject;
 
 import org.junit.jupiter.api.Test;
 
+import static com.example.jpa.utils.BeanUtils.updateProperties;
+
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.ParameterizedType;
+import java.lang.reflect.Type;
 import java.util.*;
 
 import static org.junit.Assert.*;
@@ -143,13 +144,71 @@ public class MyTest {
 //        }).ifPresent(System.out::println);
     }
 
+    static class Person<T,D> {
+        private final Class<T> clazz;
+        private final Class<D> dClass;
+        public Person() {
+
+            Type superClass = this.getClass().getGenericSuperclass();
+            // 使用反射技术得到T的真实类型
+            System.out.println(superClass instanceof ParameterizedType);
+            ParameterizedType pt = (ParameterizedType) this.getClass().getGenericSuperclass(); // 获取当前new的对象的 泛型的父类 类型
+            System.out.println(pt.getActualTypeArguments()[0]);
+            this.clazz = (Class<T>) pt.getActualTypeArguments()[0]; // 获取第一个类型参数的真实类型
+            this.dClass = (Class<D>) pt.getActualTypeArguments()[1];
+            System.out.println("clazz ---> " + clazz);
+            System.out.println("clazz2 ---> " + dClass);
+
+        }
+    }
+    static class Student3{}
+    static class Student extends Person<Student, Student3>{};
+
     @Test
     public void test10() {
-        User2 user2 = new User2(16, "姜有琪",  "jiang.you.qi","k123456", 12, false);
-        User user = new User();
-        org.springframework.beans.BeanUtils
-                .copyProperties(user2, user);
-        System.out.println(user);
+        Student student = new Student();
+    }
 
+    static ParameterizedType getData(Class<?> superClass, Class<?> implementationClass) {
+        Type[] superData = implementationClass.getGenericInterfaces();
+        ParameterizedType currentType = null;
+        for (Type genericType: superData) {
+            ParameterizedType parameterizedType = (ParameterizedType) genericType;
+            if (parameterizedType.getRawType().getTypeName().equals(superClass.getTypeName())){
+                currentType = parameterizedType;
+                break;
+            }
+        }
+        return currentType;
+    }
+    static interface BaseUser<T> {
+        default Class<T> getParameterizedType() {
+            ParameterizedType currentType = getData(BaseUser.class, this.getClass());
+            Class<T> domain = (Class<T>) currentType.getActualTypeArguments()[0];
+            return domain;
+        }
+    }
+
+    static class Student2 implements BaseUser<Student2>{
+        public void show() {
+            System.out.println("new sTUDENT ");
+        }
+    }
+
+    @Test
+    public void test11() throws NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
+        Student2 student2 = new Student2();
+        Student2 student21 = student2.getParameterizedType().getDeclaredConstructor().newInstance();
+        student21.show();
+    }
+
+    @Test
+    public void test12() {
+        int a =10;
+        Object b = null;
+        if (a>9){
+            b = 188;
+        }
+        System.out.println(b);
     }
 }

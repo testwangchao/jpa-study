@@ -4,6 +4,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.lang.NonNull;
 import org.springframework.lang.Nullable;
 
+/**
+ * 统一异常
+ */
 public abstract class AbstractException extends RuntimeException{
     /**
      * Error errorData.

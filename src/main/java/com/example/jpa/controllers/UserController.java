@@ -1,28 +1,35 @@
 package com.example.jpa.controllers;
 
+import com.example.jpa.dto.UserDto;
+import com.example.jpa.param.RoleInfo;
 import com.example.jpa.param.SetRole;
 import com.example.jpa.param.UserInfo;
 import com.example.jpa.pojo.User;
-import com.example.jpa.pojo.User2;
 import com.example.jpa.service.UserRoleService;
 import com.example.jpa.service.UserService;
-import com.example.jpa.support.BaseResponse;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Sort;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.Assert;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 @Slf4j
 @RestController
 public class UserController {
     private final UserService userService;
     private final UserRoleService userRoleService;
+
+
     public UserController(UserService userService, UserRoleService userRoleService){
         this.userService = userService;
         this.userRoleService = userRoleService;
@@ -30,7 +37,7 @@ public class UserController {
 
     @PostMapping("userInfo")
     public User getUserInfo(@RequestBody UserInfo userInfo) {
-        return userService.getByUsernameNonNull(userInfo.getUserName());
+        return userService.getByUsernameNonNull(userInfo.getName());
     }
 
     /*
@@ -41,9 +48,9 @@ public class UserController {
     @Transactional
     @PostMapping("deleteUser")
     public int deleteUser(@RequestBody UserInfo userInfo) {
-        Assert.notNull(String.valueOf(userInfo.getUserName()), "userId不能为空");
+        Assert.notNull(String.valueOf(userInfo.getName()), "userId不能为空");
         userService.createUser(userInfo);
-        userService.deleteByUserId(userInfo.getUserId());
+        userService.deleteByUserId(userInfo.getId());
         return 1;
     }
 
@@ -53,29 +60,33 @@ public class UserController {
      */
     @PostMapping("deleteUser2")
     public int deleteUser2(@RequestBody UserInfo userInfo) {
-        Assert.notNull(String.valueOf(userInfo.getUserName()), "userId不能为空");
+        Assert.notNull(String.valueOf(userInfo.getName()), "userId不能为空");
         userService.deleteCreate(userInfo);
         return 1;
     }
 
     @GetMapping("userList")
-    public List<User> getAllUsers(){
-        return userService.getAllUsers();
-    }
-
-    @PostMapping("user2")
-    public User2 getUser2(@RequestBody User user) {
-        return userService.convertTo(user);
+    public Page<User> getAllUsers(){
+        Sort.Order order1 = new Sort.Order(Sort.Direction.DESC, "createTime");
+        Sort.Order order2 = new Sort.Order(Sort.Direction.DESC, "id");
+        List<Sort.Order> orders = new ArrayList<>(Arrays.asList(order1, order2));
+        return userService.getAllUsers(Sort.by(orders));
     }
 
     @PostMapping("create")
-    public BaseResponse<String> createUser(@RequestBody UserInfo userInfo) {
-        userService.createUser(userInfo);
-        return BaseResponse.ok("change success");
+    public UserDto createUser(@RequestBody @Validated UserInfo userInfo) {
+        User user = userService.createUser(userInfo);
+        return userService.convertTo(user);
+//        return BaseResponse.ok("change success");
     }
 
     @PostMapping("setRole")
     public void setRole(@RequestBody SetRole setRole){
         userRoleService.setId(setRole.getUserId(), setRole.getRoleId());
+    }
+
+    @PostMapping("users")
+    public List<User> getAllUersRole(@RequestBody RoleInfo roleInfo){
+        return userRoleService.findUsersRole(roleInfo.getRoleId());
     }
 }

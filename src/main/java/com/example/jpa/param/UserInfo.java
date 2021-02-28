@@ -1,14 +1,13 @@
 package com.example.jpa.param;
 
-import lombok.AllArgsConstructor;
+import javax.validation.constraints.NotBlank;
+import com.example.jpa.dto.base.InputConverter;
+import com.example.jpa.pojo.User;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
-public class UserInfo {
-    private String userName;
-
-    private int userId;
+public class UserInfo implements InputConverter<User> {
+    @NotBlank(message = "用户名不能为空")
+    private String name;
+    private int id;
 }

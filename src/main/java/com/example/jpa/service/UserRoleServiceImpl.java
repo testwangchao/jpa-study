@@ -1,21 +1,24 @@
 package com.example.jpa.service;
 
 import com.example.jpa.exceptions.NotFoundException;
-import com.example.jpa.param.RoleInfo;
 import com.example.jpa.pojo.User;
 import com.example.jpa.pojo.UserRole;
 import com.example.jpa.repository.UserRoleRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class UserRoleServiceImpl implements UserRoleService{
 
     private final UserRoleRepository userRoleRepository;
-    public UserRoleServiceImpl(UserRoleRepository userRoleRepository) {
+    private final UserService userService;
+    public UserRoleServiceImpl(UserRoleRepository userRoleRepository, UserService userService) {
         this.userRoleRepository = userRoleRepository;
+        this.userService = userService;
     }
 
     @Override
@@ -24,8 +27,8 @@ public class UserRoleServiceImpl implements UserRoleService{
     }
 
     @Override
-    public Optional<List<UserRole>> getByRoleId(Integer roleId) {
-        return userRoleRepository.findAllById(roleId);
+    public List<UserRole> getByRoleId(Integer roleId) {
+        return userRoleRepository.findByRoleId(roleId);
     }
 
     @Override
@@ -37,13 +40,16 @@ public class UserRoleServiceImpl implements UserRoleService{
     }
 
     @Override
-    public List<UserRole> findUserByRoleId(int roleId) {
-        int userId = getUserRoleByRoleId(roleId).getUserId();
-        return userRoleRepository.fin;
+    public List<User> findUsersRole(int roleId) {
+        List<Integer> userIds = getUserRoleByRoleId(roleId).stream().
+                map(UserRole::getUserId).
+                collect(Collectors.toList());
+        return userService.getByUserId(userIds);
     }
 
-    public UserRole getUserRoleByRoleId(int roleId) {
-        return getByRoleId(roleId).orElseThrow(() -> new NotFoundException(String.format("角色ID: %s不存在", roleId)));
+    public List<UserRole> getUserRoleByRoleId(int roleId) {
+//        return getByRoleId(roleId).orElseThrow(() -> new NotFoundException(String.format("角色ID: %s未查询到数据", roleId)));
+        return userRoleRepository.findByRoleId(roleId);
     }
 
 }

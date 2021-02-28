@@ -13,12 +13,12 @@ public interface UserRoleService {
     Optional<UserRole> getByUserId(@NonNull Integer userId);
 
     @NonNull
-    Optional<List<UserRole>> getByRoleId(@NonNull Integer roleId);
+    List<UserRole> getByRoleId(@NonNull Integer roleId);
 
     void setId(@NonNull int userId, @NonNull int roleId);
 
     /*
     find users by roleId
      */
-    List<User> findUserByRoleId(@NonNull RoleInfo roleInfo);
+    List<User> findUsersRole(@NonNull int roleId);
 }

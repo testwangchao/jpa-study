@@ -15,7 +15,4 @@ public class User2 {
     private int age;
     private boolean isTrue;
 
-    public int test() {
-        return 1/0;
-    }
 }

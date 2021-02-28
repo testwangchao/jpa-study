@@ -35,7 +35,5 @@ public class User extends BaseEntity{
         Date updateTime = new Date();
         this.updateTime = updateTime;
         super.prePersist();
-        System.out.println(this.getCreateTime());
-        System.out.println("触发更新时间");
     }
 }

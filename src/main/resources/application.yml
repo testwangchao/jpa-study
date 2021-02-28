@@ -8,8 +8,10 @@ spring:
   jpa:
     hibernate:
       ddl-auto: update
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
 logging:
   level:
-    src: info
+    com.example.jpa: DEBUG
   file:
     path: ./logs
