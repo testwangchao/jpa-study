@@ -3,7 +3,7 @@ package com.example.jpa.service;
 import com.example.jpa.dto.UserDto;
 import com.example.jpa.param.UserInfo;
 import com.example.jpa.pojo.User;
-import com.example.jpa.pojo.User2;
+import com.example.jpa.service.base.CrudService;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
@@ -14,7 +14,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
-public interface UserService {
+public interface UserService extends CrudService<User, Integer> {
     @NonNull
     Optional<User> getByUsername(@NonNull String username);
 

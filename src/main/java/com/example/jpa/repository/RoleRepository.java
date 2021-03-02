@@ -7,7 +7,7 @@ import org.springframework.lang.NonNull;
 
 import java.util.Optional;
 
-public interface RoleRepository extends JpaRepository<Role, Integer> {
+public interface RoleRepository extends BaseRepository<Role, Integer> {
 
     @NonNull
     Optional<Role> findByName(@NonNull String roleName);
