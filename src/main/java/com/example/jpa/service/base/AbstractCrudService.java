@@ -18,6 +18,7 @@ import java.util.Optional;
 
 @Slf4j
 public abstract class AbstractCrudService<DOMAIN, ID> implements CrudService<DOMAIN, ID>{
+
     private final String domainName;
 
     private final BaseRepository<DOMAIN, ID> repository;

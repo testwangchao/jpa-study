@@ -1,7 +1,6 @@
 package com.example.jpa.repository;
 
 import com.example.jpa.pojo.User;
-import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.lang.NonNull;
 
 import java.util.Optional;

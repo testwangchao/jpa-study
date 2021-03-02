@@ -201,14 +201,4 @@ public class MyTest {
         Student2 student21 = student2.getParameterizedType().getDeclaredConstructor().newInstance();
         student21.show();
     }
-
-    @Test
-    public void test12() {
-        int a =10;
-        Object b = null;
-        if (a>9){
-            b = 188;
-        }
-        System.out.println(b);
-    }
 }
