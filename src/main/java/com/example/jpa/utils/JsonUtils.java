@@ -7,6 +7,7 @@ import org.springframework.lang.NonNull;
 import org.springframework.util.Assert;
 
 import java.io.IOException;
+import java.util.Map;
 
 public class JsonUtils {
 
@@ -60,9 +61,9 @@ public class JsonUtils {
      * @throws IOException 转为失败时抛出
      */
     @NonNull
-    public static <T> T jsonObject(@NonNull String json, @NonNull Class<T> type)
+    public static <T> T jsonToObject(@NonNull String json, @NonNull Class<T> type)
             throws IOException {
-        return jsonObject(json, type, DEFAULT_JSON_MAPPER);
+        return jsonToObject(json, type, DEFAULT_JSON_MAPPER);
     }
 
     /**
@@ -74,11 +75,23 @@ public class JsonUtils {
      * @return object specified type
      * @throws JsonProcessingException 转为失败时抛出
      */
-    public static <T> T jsonObject(@NonNull String json, @NonNull Class<T> type,
+    public static <T> T jsonToObject(@NonNull String json, @NonNull Class<T> type,
                                      @NonNull ObjectMapper objectMapper) throws JsonProcessingException {
         Assert.hasText(json, "Json content must not be blank");
         Assert.notNull(type, "Target type must not be null");
         Assert.notNull(objectMapper, "Object mapper must not null");
         return objectMapper.readValue(json, type);
+    }
+
+    /**
+     * json转map
+     * @return
+     */
+    public static Map jsonToMap(@NonNull String json, @NonNull ObjectMapper objectMapper) throws JsonProcessingException {
+        return objectMapper.readValue(json, Map.class);
+    }
+
+    public static Map<String,Object> jsonToMap(@NonNull String json) throws JsonProcessingException {
+        return jsonToMap(json, DEFAULT_JSON_MAPPER);
     }
 }

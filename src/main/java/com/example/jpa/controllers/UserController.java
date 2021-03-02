@@ -1,5 +1,6 @@
 package com.example.jpa.controllers;
 
+import com.example.jpa.client.MyClient;
 import com.example.jpa.dto.UserDto;
 import com.example.jpa.param.RoleInfo;
 import com.example.jpa.param.SetRole;
@@ -7,6 +8,9 @@ import com.example.jpa.param.UserInfo;
 import com.example.jpa.pojo.User;
 import com.example.jpa.service.UserRoleService;
 import com.example.jpa.service.UserService;
+import com.example.jpa.support.BaseResponse;
+import com.example.jpa.utils.JsonUtils;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Sort;
@@ -18,21 +22,19 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @Slf4j
 @RestController
 public class UserController {
     private final UserService userService;
     private final UserRoleService userRoleService;
+    private final MyClient myClient;
 
-
-    public UserController(UserService userService, UserRoleService userRoleService){
+    public UserController(UserService userService, UserRoleService userRoleService, MyClient myClient){
         this.userService = userService;
         this.userRoleService = userRoleService;
+        this.myClient = myClient;
     }
 
     @PostMapping("userInfo")
@@ -88,5 +90,14 @@ public class UserController {
     @PostMapping("users")
     public List<User> getAllUersRole(@RequestBody RoleInfo roleInfo){
         return userRoleService.findUsersRole(roleInfo.getRoleId());
+    }
+
+    @GetMapping("client")
+    public BaseResponse<Map<String,Object>> client() throws JsonProcessingException {
+        Map<String,Object> result = myClient.helloForest();
+        Map<String,Object> resp = new HashMap<>();
+        resp.put("content", result);
+//        System.out.println(JsonUtils.jsonToMap(result).getClass());
+        return BaseResponse.ok(resp);
     }
 }
