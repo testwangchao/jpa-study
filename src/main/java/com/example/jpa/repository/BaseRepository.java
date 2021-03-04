@@ -10,6 +10,12 @@ import org.springframework.lang.NonNull;
 import java.util.Collection;
 import java.util.List;
 
+/**
+ * Base repository接口，包含一些公共方法
+ * @param <D> 数据表对应实体类domain
+ * @param <I> 数据表自增ID类型
+ */
+
 @NoRepositoryBean
 public interface BaseRepository<D, I> extends JpaRepository<D, I> {
     /**
