@@ -13,7 +13,7 @@ public abstract class AbstractConverter<E extends ValueEnum<V>, V>
     private final Class<E> clazz;
 
     @SuppressWarnings("unchecked")
-    protected AbstractConverter(Class<E> clazz) {
+    protected AbstractConverter() {
         Type enumType = Objects.requireNonNull(
                 ReflectionUtils.getParameterizedType(AbstractConverter.class, this.getClass()))
                 .getActualTypeArguments()[0];
