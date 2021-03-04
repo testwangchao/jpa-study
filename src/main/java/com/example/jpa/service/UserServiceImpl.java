@@ -67,7 +67,7 @@ public class UserServiceImpl implements UserService{
 
     @Override
     public Page<User> getAllUsers(Sort sort) {
-        Pageable pageable = PageRequest.of(1, 10, sort);
+        Pageable pageable = PageRequest.of(0, 100, sort);
         Page<User> users = userRepository.findAll(pageable);
 //        Map<String, Object> map = new HashMap<>();
 //        map.put("content", users.getContent());

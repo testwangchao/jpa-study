@@ -1,5 +1,7 @@
 package com.example.jpa.pojo;
 
+import com.example.jpa.enums.UserStatusConverter;
+import com.example.jpa.enums.UserStatusEnum;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -29,6 +31,10 @@ public class User extends BaseEntity{
     @Column(name = "updatetime")
     @Temporal(TemporalType.TIMESTAMP)
     private Date updateTime;
+
+    @Column(name = "status")
+    @Convert(converter = UserStatusConverter.class)
+    private UserStatusEnum status;
 
     @PrePersist
     protected void prePersist() {

@@ -1,5 +1,7 @@
 package com.example.jpa;
 
+import com.example.jpa.enums.UserStatusConverter;
+import com.example.jpa.enums.UserStatusEnum;
 import com.example.jpa.pojo.User;
 import com.example.jpa.pojo.User2;
 
@@ -197,8 +199,6 @@ public class MyTest {
 
     @Test
     public void test11() throws NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
-        Student2 student2 = new Student2();
-        Student2 student21 = student2.getParameterizedType().getDeclaredConstructor().newInstance();
-        student21.show();
+        Arrays.stream(UserStatusEnum.class.getEnumConstants()).forEach( en -> System.out.println(en.getCode()));
     }
 }
