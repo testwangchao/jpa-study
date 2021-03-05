@@ -1,5 +1,6 @@
 package com.example.jpa.event.user;
 
+import com.example.jpa.exceptions.NotFoundException;
 import com.example.jpa.param.UserInfo;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.ApplicationEvent;

@@ -1,5 +1,6 @@
 package com.example.jpa.aops;
 
+import com.example.jpa.exceptions.NotFoundException;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.*;
@@ -11,7 +12,8 @@ import java.util.Arrays;
 @Component
 public class CustomAop {
 
-    @Pointcut("execution(* com.example.jpa.controller..*.*(..))")
+    @Pointcut("execution(* com.example.jpa.controllers..*.*(..))"
+            + "&& @annotation(com.example.jpa.aops.NeedManagerPower)")
     public void custom(){}
 
     //在本类的login执行之前
@@ -24,10 +26,11 @@ public class CustomAop {
     @After("custom()")
     public void afterlogin(){System.out.println("after");}
 
-    @Around("@annotation(NeedManagerPower)))")
-    public Object checklogin(ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
-        System.out.println(proceedingJoinPoint.proceed());
-        System.out.println("around");
+    @Around("custom() && @annotation(needManagerPower)))")
+    public Object checklogin(ProceedingJoinPoint proceedingJoinPoint, NeedManagerPower needManagerPower) throws Throwable {
+        if (needManagerPower.mode()!=1){
+            throw new NotFoundException("禁止访问");
+        }
         return "3423";
     }
 }

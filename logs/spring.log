@@ -160,3 +160,103 @@ ns         %     Task name
 2021-03-05 17:39:43.230  INFO 5063 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2021-03-05 17:39:43.240  INFO 5063 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2021-03-05 17:39:43.298  INFO 5063 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-03-05 19:24:44.424  INFO 8698 --- [main] com.example.jpa.JpaApplication           : Starting JpaApplication using Java 1.8.0_191 on Sigmob-Mac-mini.local with PID 8698 (/Users/happyelements/IdeaProjects/learn-jpa/target/classes started by happyelements in /Users/happyelements/IdeaProjects/learn-jpa)
+2021-03-05 19:24:44.438  INFO 8698 --- [main] com.example.jpa.JpaApplication           : No active profile set, falling back to default profiles: default
+2021-03-05 19:24:47.516  INFO 8698 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-03-05 19:24:47.688  INFO 8698 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 149 ms. Found 3 JPA repository interfaces.
+2021-03-05 19:24:48.811  INFO 8698 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'com.thebeastshop.forest.springboot.ForestAutoConfiguration' of type [com.thebeastshop.forest.springboot.ForestAutoConfiguration$$EnhancerBySpringCGLIB$$443913ac] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-03-05 19:24:48.871  INFO 8698 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'forestConfigurationProperties' of type [com.thebeastshop.forest.springboot.properties.ForestConfigurationProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-03-05 19:24:48.937  INFO 8698 --- [main] trationDelegate$BeanPostProcessorChecker : Bean '(inner bean)#6b760460' of type [com.dtflys.forest.interceptor.SpringInterceptorFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-03-05 19:24:48.944  INFO 8698 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'forestConfiguration' of type [com.dtflys.forest.config.ForestConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-03-05 19:24:48.981  INFO 8698 --- [main] c.d.f.scanner.ClassPathClientScanner     : [Forest] Created Forest Client Bean with name 'myClient' and Proxy of 'com.example.jpa.client.MyClient' client interface
+2021-03-05 19:24:48.996  INFO 8698 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'myClient' of type [com.dtflys.forest.beans.ClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-03-05 19:24:49.410  INFO 8698 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-03-05 19:24:49.423  INFO 8698 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-03-05 19:24:49.424  INFO 8698 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.43]
+2021-03-05 19:24:49.592  INFO 8698 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-03-05 19:24:49.593  INFO 8698 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4902 ms
+2021-03-05 19:24:49.945  INFO 8698 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-03-05 19:24:50.008  INFO 8698 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.28.Final
+2021-03-05 19:24:50.174  INFO 8698 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-03-05 19:24:50.299  INFO 8698 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-03-05 19:24:50.486  INFO 8698 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-03-05 19:24:50.512  INFO 8698 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2021-03-05 19:24:51.393  INFO 8698 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-03-05 19:24:51.402  INFO 8698 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-03-05 19:24:52.387  WARN 8698 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-03-05 19:24:52.992  INFO 8698 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-03-05 19:24:53.645  INFO 8698 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-03-05 19:24:53.657  INFO 8698 --- [main] com.example.jpa.JpaApplication           : Started JpaApplication in 11.729 seconds (JVM running for 13.531)
+2021-03-05 19:25:03.974  INFO 8698 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-03-05 19:25:03.977  INFO 8698 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-03-05 19:25:03.989  INFO 8698 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 11 ms
+2021-03-05 19:25:25.722  INFO 8698 --- [http-nio-8080-exec-6] c.e.j.core.CommonResultControllerAdvice  : org.springframework.data.domain.PageImpl
+2021-03-05 19:25:25.722  INFO 8698 --- [http-nio-8080-exec-6] c.e.j.core.CommonResultControllerAdvice  : [interface org.springframework.data.domain.Page]
+2021-03-05 19:45:34.044  INFO 8698 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-03-05 19:45:34.058  INFO 8698 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-03-05 19:45:34.069  INFO 8698 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-03-05 19:45:34.082  INFO 8698 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-03-05 20:01:35.635  INFO 9819 --- [main] com.example.jpa.JpaApplication           : Starting JpaApplication using Java 1.8.0_191 on Sigmob-Mac-mini.local with PID 9819 (/Users/happyelements/IdeaProjects/learn-jpa/target/classes started by happyelements in /Users/happyelements/IdeaProjects/learn-jpa)
+2021-03-05 20:01:35.642  INFO 9819 --- [main] com.example.jpa.JpaApplication           : No active profile set, falling back to default profiles: default
+2021-03-05 20:01:36.817  INFO 9819 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-03-05 20:01:36.937  INFO 9819 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 100 ms. Found 3 JPA repository interfaces.
+2021-03-05 20:01:37.488  INFO 9819 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'com.thebeastshop.forest.springboot.ForestAutoConfiguration' of type [com.thebeastshop.forest.springboot.ForestAutoConfiguration$$EnhancerBySpringCGLIB$$f8a767c1] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-03-05 20:01:37.518  INFO 9819 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'forestConfigurationProperties' of type [com.thebeastshop.forest.springboot.properties.ForestConfigurationProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-03-05 20:01:37.595  INFO 9819 --- [main] trationDelegate$BeanPostProcessorChecker : Bean '(inner bean)#3e7dfd44' of type [com.dtflys.forest.interceptor.SpringInterceptorFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-03-05 20:01:37.602  INFO 9819 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'forestConfiguration' of type [com.dtflys.forest.config.ForestConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-03-05 20:01:37.645  INFO 9819 --- [main] c.d.f.scanner.ClassPathClientScanner     : [Forest] Created Forest Client Bean with name 'myClient' and Proxy of 'com.example.jpa.client.MyClient' client interface
+2021-03-05 20:01:37.660  INFO 9819 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'myClient' of type [com.dtflys.forest.beans.ClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-03-05 20:01:38.111  INFO 9819 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-03-05 20:01:38.123  INFO 9819 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-03-05 20:01:38.124  INFO 9819 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.43]
+2021-03-05 20:01:38.263  INFO 9819 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-03-05 20:01:38.264  INFO 9819 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2518 ms
+2021-03-05 20:01:38.701  INFO 9819 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-03-05 20:01:38.802  INFO 9819 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.28.Final
+2021-03-05 20:01:38.979  INFO 9819 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-03-05 20:01:39.103  INFO 9819 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-03-05 20:01:39.283  INFO 9819 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-03-05 20:01:39.305  INFO 9819 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2021-03-05 20:01:40.127  INFO 9819 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-03-05 20:01:40.137  INFO 9819 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-03-05 20:01:41.114  WARN 9819 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-03-05 20:01:41.743  INFO 9819 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-03-05 20:01:42.365  INFO 9819 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-03-05 20:01:42.376  INFO 9819 --- [main] com.example.jpa.JpaApplication           : Started JpaApplication in 7.657 seconds (JVM running for 9.329)
+2021-03-05 20:01:57.974  INFO 9819 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-03-05 20:01:57.989  INFO 9819 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-03-05 20:01:57.991  INFO 9819 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2021-03-05 20:07:40.215  INFO 9819 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-03-05 20:07:40.224  INFO 9819 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-03-05 20:07:40.234  INFO 9819 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-03-05 20:07:40.240  INFO 9819 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-03-05 20:07:49.307  INFO 10003 --- [main] com.example.jpa.JpaApplication           : Starting JpaApplication using Java 1.8.0_191 on Sigmob-Mac-mini.local with PID 10003 (/Users/happyelements/IdeaProjects/learn-jpa/target/classes started by happyelements in /Users/happyelements/IdeaProjects/learn-jpa)
+2021-03-05 20:07:49.311  INFO 10003 --- [main] com.example.jpa.JpaApplication           : No active profile set, falling back to default profiles: default
+2021-03-05 20:07:50.433  INFO 10003 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-03-05 20:07:50.496  INFO 10003 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 55 ms. Found 3 JPA repository interfaces.
+2021-03-05 20:07:50.890  INFO 10003 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'com.thebeastshop.forest.springboot.ForestAutoConfiguration' of type [com.thebeastshop.forest.springboot.ForestAutoConfiguration$$EnhancerBySpringCGLIB$$f8a767c1] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-03-05 20:07:50.914  INFO 10003 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'forestConfigurationProperties' of type [com.thebeastshop.forest.springboot.properties.ForestConfigurationProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-03-05 20:07:50.951  INFO 10003 --- [main] trationDelegate$BeanPostProcessorChecker : Bean '(inner bean)#1eb6e1c' of type [com.dtflys.forest.interceptor.SpringInterceptorFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-03-05 20:07:50.958  INFO 10003 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'forestConfiguration' of type [com.dtflys.forest.config.ForestConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-03-05 20:07:50.997  INFO 10003 --- [main] c.d.f.scanner.ClassPathClientScanner     : [Forest] Created Forest Client Bean with name 'myClient' and Proxy of 'com.example.jpa.client.MyClient' client interface
+2021-03-05 20:07:51.007  INFO 10003 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'myClient' of type [com.dtflys.forest.beans.ClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-03-05 20:07:51.284  INFO 10003 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-03-05 20:07:51.292  INFO 10003 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-03-05 20:07:51.293  INFO 10003 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.43]
+2021-03-05 20:07:51.360  INFO 10003 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-03-05 20:07:51.360  INFO 10003 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1887 ms
+2021-03-05 20:07:51.625  INFO 10003 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-03-05 20:07:51.663  INFO 10003 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.28.Final
+2021-03-05 20:07:51.768  INFO 10003 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-03-05 20:07:51.858  INFO 10003 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-03-05 20:07:52.307  INFO 10003 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-03-05 20:07:52.322  INFO 10003 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2021-03-05 20:07:52.944  INFO 10003 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-03-05 20:07:52.952  INFO 10003 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-03-05 20:07:53.751  WARN 10003 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-03-05 20:07:53.993  INFO 10003 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-03-05 20:07:54.494  INFO 10003 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-03-05 20:07:54.505  INFO 10003 --- [main] com.example.jpa.JpaApplication           : Started JpaApplication in 6.379 seconds (JVM running for 7.745)
+2021-03-05 20:07:58.571  INFO 10003 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-03-05 20:07:58.573  INFO 10003 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-03-05 20:07:58.578  INFO 10003 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms

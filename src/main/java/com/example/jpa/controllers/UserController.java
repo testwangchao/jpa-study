@@ -1,5 +1,6 @@
 package com.example.jpa.controllers;
 
+import com.example.jpa.aops.NeedManagerPower;
 import com.example.jpa.client.MyClient;
 import com.example.jpa.dto.UserDto;
 import com.example.jpa.param.RoleInfo;
@@ -100,6 +101,7 @@ public class UserController {
 //    }
 
     @PostMapping("setStatus")
+    @NeedManagerPower(mode = 2)
     public void setStatus(@RequestBody UserInfo userInfo){
 
         userService.setUserStatus(userInfo);
