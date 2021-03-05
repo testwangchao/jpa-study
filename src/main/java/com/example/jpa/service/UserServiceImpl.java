@@ -1,10 +1,14 @@
 package com.example.jpa.service;
 import com.example.jpa.dto.UserDto;
+import com.example.jpa.enums.UserStatusConverter;
+import com.example.jpa.enums.UserStatusEnum;
 import com.example.jpa.event.user.UserCreateEvent;
 import com.example.jpa.exceptions.NotFoundException;
 import com.example.jpa.param.UserInfo;
 import com.example.jpa.pojo.User;
+import com.example.jpa.pojo.User2;
 import com.example.jpa.repository.UserRepository;
+import com.example.jpa.service.base.AbstractCrudService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.data.domain.Page;
@@ -15,19 +19,20 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.Assert;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 @Slf4j
 @Service
-public class UserServiceImpl implements UserService{
+public class UserServiceImpl extends AbstractCrudService<User, Integer> implements UserService{
     public UserRepository userRepository;
     private final ApplicationEventPublisher eventPublisher;
-
-    public UserServiceImpl(UserRepository userRepository, ApplicationEventPublisher eventPublisher){
+    private User2 user2;
+    public UserServiceImpl(
+            UserRepository userRepository,
+            ApplicationEventPublisher eventPublisher
+            ){
+        super(userRepository);
 
         this.userRepository = userRepository;
         this.eventPublisher = eventPublisher;
@@ -102,5 +107,12 @@ public class UserServiceImpl implements UserService{
         deleteByUserId(userInfo.getId());
     }
 
-
+    @Override
+    public void setUserStatus(UserInfo userInfo) {
+        UserStatusConverter converter = new UserStatusConverter();
+        UserStatusEnum userStatus = converter.mapEnum(userInfo.getStatus()).get(userInfo.getStatus());
+        User updateUser = getById(userInfo.getId());
+        updateUser.setStatus(userStatus);
+        this.update(updateUser);
+    }
 }

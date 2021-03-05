@@ -29,12 +29,10 @@ import java.util.*;
 public class UserController {
     private final UserService userService;
     private final UserRoleService userRoleService;
-    private final MyClient myClient;
 
-    public UserController(UserService userService, UserRoleService userRoleService, MyClient myClient){
+    public UserController(UserService userService, UserRoleService userRoleService){
         this.userService = userService;
         this.userRoleService = userRoleService;
-        this.myClient = myClient;
     }
 
     @PostMapping("userInfo")
@@ -92,12 +90,18 @@ public class UserController {
         return userRoleService.findUsersRole(roleInfo.getRoleId());
     }
 
-    @GetMapping("client")
-    public BaseResponse<Map<String,Object>> client() throws JsonProcessingException {
-        Map<String,Object> result = myClient.helloForest();
-        Map<String,Object> resp = new HashMap<>();
-        resp.put("content", result);
-//        System.out.println(JsonUtils.jsonToMap(result).getClass());
-        return BaseResponse.ok(resp);
+//    @GetMapping("client")
+//    public BaseResponse<Map<String,Object>> client() throws JsonProcessingException {
+//        Map<String,Object> result = myClient.helloForest();
+//        Map<String,Object> resp = new HashMap<>();
+//        resp.put("content", result);
+////        System.out.println(JsonUtils.jsonToMap(result).getClass());
+//        return BaseResponse.ok(resp);
+//    }
+
+    @PostMapping("setStatus")
+    public void setStatus(@RequestBody UserInfo userInfo){
+
+        userService.setUserStatus(userInfo);
     }
 }

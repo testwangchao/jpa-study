@@ -2,6 +2,7 @@ package com.example.jpa.enums;
 
 
 import com.example.jpa.enums.base.AbstractConverter;
+import org.springframework.stereotype.Component;
 
 import javax.persistence.AttributeConverter;
 import javax.persistence.Converter;

@@ -1,15 +1,10 @@
 package com.example.jpa;
 
 import com.example.jpa.enums.UserStatusConverter;
-import com.example.jpa.enums.UserStatusEnum;
-import com.example.jpa.pojo.User;
 import com.example.jpa.pojo.User2;
 
 import org.junit.jupiter.api.Test;
 
-import static com.example.jpa.utils.BeanUtils.updateProperties;
-
-import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 import java.util.*;
@@ -198,7 +193,9 @@ public class MyTest {
     }
 
     @Test
-    public void test11() throws NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
-        Arrays.stream(UserStatusEnum.class.getEnumConstants()).forEach( en -> System.out.println(en.getCode()));
+    public void test11() {
+
+        UserStatusConverter converter = new UserStatusConverter();
+        System.out.println(converter.mapEnum(3));
     }
 }

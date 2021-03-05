@@ -1,884 +1,162 @@
-2021-03-04 16:44:53.040  INFO 64355 --- [main] com.example.jpa.JpaApplication           : Starting JpaApplication using Java 1.8.0_191 on Sigmob-Mac-mini.local with PID 64355 (/Users/happyelements/IdeaProjects/learn-jpa/target/classes started by happyelements in /Users/happyelements/IdeaProjects/learn-jpa)
-2021-03-04 16:44:53.051 DEBUG 64355 --- [main] com.example.jpa.JpaApplication           : Running with Spring Boot v2.4.3, Spring v5.3.4
-2021-03-04 16:44:53.053  INFO 64355 --- [main] com.example.jpa.JpaApplication           : No active profile set, falling back to default profiles: default
-2021-03-04 16:44:54.617  INFO 64355 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2021-03-04 16:44:54.756  INFO 64355 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 106 ms. Found 3 JPA repository interfaces.
-2021-03-04 16:44:55.757  INFO 64355 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'com.thebeastshop.forest.springboot.ForestAutoConfiguration' of type [com.thebeastshop.forest.springboot.ForestAutoConfiguration$$EnhancerBySpringCGLIB$$f668921b] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-03-04 16:44:55.799  INFO 64355 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'forestConfigurationProperties' of type [com.thebeastshop.forest.springboot.properties.ForestConfigurationProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-03-04 16:44:55.865  INFO 64355 --- [main] trationDelegate$BeanPostProcessorChecker : Bean '(inner bean)#3811510' of type [com.dtflys.forest.interceptor.SpringInterceptorFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-03-04 16:44:55.873  INFO 64355 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'forestConfiguration' of type [com.dtflys.forest.config.ForestConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-03-04 16:44:55.922  INFO 64355 --- [main] c.d.f.scanner.ClassPathClientScanner     : [Forest] Created Forest Client Bean with name 'myClient' and Proxy of 'com.example.jpa.client.MyClient' client interface
-2021-03-04 16:44:55.939  INFO 64355 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'myClient' of type [com.dtflys.forest.beans.ClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-03-04 16:44:56.548  INFO 64355 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2021-03-04 16:44:56.565  INFO 64355 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2021-03-04 16:44:56.565  INFO 64355 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.43]
-2021-03-04 16:44:56.729  INFO 64355 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2021-03-04 16:44:56.729  INFO 64355 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3518 ms
-2021-03-04 16:44:57.200  INFO 64355 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2021-03-04 16:44:57.287  INFO 64355 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.28.Final
-2021-03-04 16:44:57.527  INFO 64355 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2021-03-04 16:44:57.692  INFO 64355 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2021-03-04 16:44:57.982  INFO 64355 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2021-03-04 16:44:58.036  INFO 64355 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-2021-03-04 16:44:58.363  WARN 64355 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is java.lang.IllegalStateException: Unable to instantiate AttributeConverter [com.example.jpa.enums.UserStatusEnum]
-2021-03-04 16:44:58.364  INFO 64355 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2021-03-04 16:44:58.575  INFO 64355 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2021-03-04 16:44:58.585  INFO 64355 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
-2021-03-04 16:44:58.603  INFO 64355 --- [main] ConditionEvaluationReportLoggingListener : 
-
-Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
-2021-03-04 16:44:58.655 ERROR 64355 --- [main] o.s.boot.SpringApplication               : Application run failed
-
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is java.lang.IllegalStateException: Unable to instantiate AttributeConverter [com.example.jpa.enums.UserStatusEnum]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1786) ~[spring-beans-5.3.4.jar:5.3.4]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:602) ~[spring-beans-5.3.4.jar:5.3.4]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:524) ~[spring-beans-5.3.4.jar:5.3.4]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.4.jar:5.3.4]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.4.jar:5.3.4]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.4.jar:5.3.4]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.4.jar:5.3.4]
-	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1153) ~[spring-context-5.3.4.jar:5.3.4]
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:907) ~[spring-context-5.3.4.jar:5.3.4]
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:582) ~[spring-context-5.3.4.jar:5.3.4]
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:144) ~[spring-boot-2.4.3.jar:2.4.3]
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:767) [spring-boot-2.4.3.jar:2.4.3]
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:759) [spring-boot-2.4.3.jar:2.4.3]
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:426) [spring-boot-2.4.3.jar:2.4.3]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:326) [spring-boot-2.4.3.jar:2.4.3]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1311) [spring-boot-2.4.3.jar:2.4.3]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1300) [spring-boot-2.4.3.jar:2.4.3]
-	at com.example.jpa.JpaApplication.main(JpaApplication.java:13) [classes/:na]
-Caused by: java.lang.IllegalStateException: Unable to instantiate AttributeConverter [com.example.jpa.enums.UserStatusEnum]
-	at org.hibernate.cfg.AbstractPropertyHolder.buildExceptionFromInstantiationError(AbstractPropertyHolder.java:113) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
-	at org.hibernate.cfg.AbstractPropertyHolder.resolveAttributeConverterDescriptor(AbstractPropertyHolder.java:89) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
-	at org.hibernate.cfg.annotations.PropertyBinder.makePropertyAndValue(PropertyBinder.java:189) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
-	at org.hibernate.cfg.annotations.PropertyBinder.makePropertyValueAndBind(PropertyBinder.java:205) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
-	at org.hibernate.cfg.AnnotationBinder.processElementAnnotations(AnnotationBinder.java:2300) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
-	at org.hibernate.cfg.AnnotationBinder.processIdPropertiesIfNotAlready(AnnotationBinder.java:979) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
-	at org.hibernate.cfg.AnnotationBinder.bindClass(AnnotationBinder.java:806) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
-	at org.hibernate.boot.model.source.internal.annotations.AnnotationMetadataSourceProcessorImpl.processEntityHierarchies(AnnotationMetadataSourceProcessorImpl.java:248) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
-	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess$1.processEntityHierarchies(MetadataBuildingProcess.java:239) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
-	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:282) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
-	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1224) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
-	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1255) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
-	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58) ~[spring-orm-5.3.4.jar:5.3.4]
-	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365) ~[spring-orm-5.3.4.jar:5.3.4]
-	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409) ~[spring-orm-5.3.4.jar:5.3.4]
-	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396) ~[spring-orm-5.3.4.jar:5.3.4]
-	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341) ~[spring-orm-5.3.4.jar:5.3.4]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1845) ~[spring-beans-5.3.4.jar:5.3.4]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1782) ~[spring-beans-5.3.4.jar:5.3.4]
-	... 17 common frames omitted
-Caused by: org.hibernate.AnnotationException: Unable to create AttributeConverter instance
-	at org.hibernate.cfg.AbstractPropertyHolder.makeAttributeConverterDescriptor(AbstractPropertyHolder.java:131) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
-	at org.hibernate.cfg.AbstractPropertyHolder.resolveAttributeConverterDescriptor(AbstractPropertyHolder.java:86) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
-	... 34 common frames omitted
-Caused by: org.hibernate.AnnotationException: Could not extract type parameter information from AttributeConverter implementation [com.example.jpa.enums.UserStatusEnum]
-	at org.hibernate.boot.model.convert.internal.AbstractConverterDescriptor.<init>(AbstractConverterDescriptor.java:47) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
-	at org.hibernate.boot.model.convert.internal.ClassBasedConverterDescriptor.<init>(ClassBasedConverterDescriptor.java:32) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
-	at org.hibernate.cfg.AbstractPropertyHolder.makeAttributeConverterDescriptor(AbstractPropertyHolder.java:127) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
-	... 35 common frames omitted
-
-2021-03-04 17:48:51.068  INFO 66049 --- [main] com.example.jpa.JpaApplication           : Starting JpaApplication using Java 1.8.0_191 on Sigmob-Mac-mini.local with PID 66049 (/Users/happyelements/IdeaProjects/learn-jpa/target/classes started by happyelements in /Users/happyelements/IdeaProjects/learn-jpa)
-2021-03-04 17:48:51.083 DEBUG 66049 --- [main] com.example.jpa.JpaApplication           : Running with Spring Boot v2.4.3, Spring v5.3.4
-2021-03-04 17:48:51.085  INFO 66049 --- [main] com.example.jpa.JpaApplication           : No active profile set, falling back to default profiles: default
-2021-03-04 17:48:52.198  INFO 66049 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2021-03-04 17:48:52.278  INFO 66049 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 67 ms. Found 3 JPA repository interfaces.
-2021-03-04 17:48:52.914  INFO 66049 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'com.thebeastshop.forest.springboot.ForestAutoConfiguration' of type [com.thebeastshop.forest.springboot.ForestAutoConfiguration$$EnhancerBySpringCGLIB$$25dc761e] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-03-04 17:48:52.948  INFO 66049 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'forestConfigurationProperties' of type [com.thebeastshop.forest.springboot.properties.ForestConfigurationProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-03-04 17:48:53.032  INFO 66049 --- [main] trationDelegate$BeanPostProcessorChecker : Bean '(inner bean)#2f4ba1ae' of type [com.dtflys.forest.interceptor.SpringInterceptorFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-03-04 17:48:53.049  INFO 66049 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'forestConfiguration' of type [com.dtflys.forest.config.ForestConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-03-04 17:48:53.114  INFO 66049 --- [main] c.d.f.scanner.ClassPathClientScanner     : [Forest] Created Forest Client Bean with name 'myClient' and Proxy of 'com.example.jpa.client.MyClient' client interface
-2021-03-04 17:48:53.133  INFO 66049 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'myClient' of type [com.dtflys.forest.beans.ClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-03-04 17:48:54.234  INFO 66049 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2021-03-04 17:48:54.264  INFO 66049 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2021-03-04 17:48:54.264  INFO 66049 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.43]
-2021-03-04 17:48:54.449  INFO 66049 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2021-03-04 17:48:54.450  INFO 66049 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3273 ms
-2021-03-04 17:48:54.900  INFO 66049 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2021-03-04 17:48:55.029  INFO 66049 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.28.Final
-2021-03-04 17:48:55.328  INFO 66049 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2021-03-04 17:48:55.492  INFO 66049 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2021-03-04 17:48:55.722  INFO 66049 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2021-03-04 17:48:55.757  INFO 66049 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-2021-03-04 17:48:56.004  WARN 66049 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is java.lang.IllegalStateException: Unable to instantiate AttributeConverter [com.example.jpa.enums.UserStatusEnum]
-2021-03-04 17:48:56.004  INFO 66049 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2021-03-04 17:48:56.214  INFO 66049 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2021-03-04 17:48:56.217  INFO 66049 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
-2021-03-04 17:48:56.233  INFO 66049 --- [main] ConditionEvaluationReportLoggingListener : 
-
-Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
-2021-03-04 17:48:56.267 ERROR 66049 --- [main] o.s.boot.SpringApplication               : Application run failed
-
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is java.lang.IllegalStateException: Unable to instantiate AttributeConverter [com.example.jpa.enums.UserStatusEnum]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1786) ~[spring-beans-5.3.4.jar:5.3.4]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:602) ~[spring-beans-5.3.4.jar:5.3.4]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:524) ~[spring-beans-5.3.4.jar:5.3.4]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.4.jar:5.3.4]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.4.jar:5.3.4]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.4.jar:5.3.4]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.4.jar:5.3.4]
-	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1153) ~[spring-context-5.3.4.jar:5.3.4]
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:907) ~[spring-context-5.3.4.jar:5.3.4]
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:582) ~[spring-context-5.3.4.jar:5.3.4]
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:144) ~[spring-boot-2.4.3.jar:2.4.3]
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:767) [spring-boot-2.4.3.jar:2.4.3]
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:759) [spring-boot-2.4.3.jar:2.4.3]
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:426) [spring-boot-2.4.3.jar:2.4.3]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:326) [spring-boot-2.4.3.jar:2.4.3]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1311) [spring-boot-2.4.3.jar:2.4.3]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1300) [spring-boot-2.4.3.jar:2.4.3]
-	at com.example.jpa.JpaApplication.main(JpaApplication.java:13) [classes/:na]
-Caused by: java.lang.IllegalStateException: Unable to instantiate AttributeConverter [com.example.jpa.enums.UserStatusEnum]
-	at org.hibernate.cfg.AbstractPropertyHolder.buildExceptionFromInstantiationError(AbstractPropertyHolder.java:113) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
-	at org.hibernate.cfg.AbstractPropertyHolder.resolveAttributeConverterDescriptor(AbstractPropertyHolder.java:89) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
-	at org.hibernate.cfg.annotations.PropertyBinder.makePropertyAndValue(PropertyBinder.java:189) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
-	at org.hibernate.cfg.annotations.PropertyBinder.makePropertyValueAndBind(PropertyBinder.java:205) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
-	at org.hibernate.cfg.AnnotationBinder.processElementAnnotations(AnnotationBinder.java:2300) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
-	at org.hibernate.cfg.AnnotationBinder.processIdPropertiesIfNotAlready(AnnotationBinder.java:979) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
-	at org.hibernate.cfg.AnnotationBinder.bindClass(AnnotationBinder.java:806) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
-	at org.hibernate.boot.model.source.internal.annotations.AnnotationMetadataSourceProcessorImpl.processEntityHierarchies(AnnotationMetadataSourceProcessorImpl.java:248) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
-	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess$1.processEntityHierarchies(MetadataBuildingProcess.java:239) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
-	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:282) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
-	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1224) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
-	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1255) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
-	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58) ~[spring-orm-5.3.4.jar:5.3.4]
-	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365) ~[spring-orm-5.3.4.jar:5.3.4]
-	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409) ~[spring-orm-5.3.4.jar:5.3.4]
-	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396) ~[spring-orm-5.3.4.jar:5.3.4]
-	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341) ~[spring-orm-5.3.4.jar:5.3.4]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1845) ~[spring-beans-5.3.4.jar:5.3.4]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1782) ~[spring-beans-5.3.4.jar:5.3.4]
-	... 17 common frames omitted
-Caused by: org.hibernate.AnnotationException: Unable to create AttributeConverter instance
-	at org.hibernate.cfg.AbstractPropertyHolder.makeAttributeConverterDescriptor(AbstractPropertyHolder.java:131) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
-	at org.hibernate.cfg.AbstractPropertyHolder.resolveAttributeConverterDescriptor(AbstractPropertyHolder.java:86) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
-	... 34 common frames omitted
-Caused by: org.hibernate.AnnotationException: Could not extract type parameter information from AttributeConverter implementation [com.example.jpa.enums.UserStatusEnum]
-	at org.hibernate.boot.model.convert.internal.AbstractConverterDescriptor.<init>(AbstractConverterDescriptor.java:47) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
-	at org.hibernate.boot.model.convert.internal.ClassBasedConverterDescriptor.<init>(ClassBasedConverterDescriptor.java:32) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
-	at org.hibernate.cfg.AbstractPropertyHolder.makeAttributeConverterDescriptor(AbstractPropertyHolder.java:127) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
-	... 35 common frames omitted
-
-2021-03-04 17:49:29.507  INFO 66123 --- [main] com.example.jpa.JpaApplication           : Starting JpaApplication using Java 1.8.0_191 on Sigmob-Mac-mini.local with PID 66123 (/Users/happyelements/IdeaProjects/learn-jpa/target/classes started by happyelements in /Users/happyelements/IdeaProjects/learn-jpa)
-2021-03-04 17:49:29.512 DEBUG 66123 --- [main] com.example.jpa.JpaApplication           : Running with Spring Boot v2.4.3, Spring v5.3.4
-2021-03-04 17:49:29.513  INFO 66123 --- [main] com.example.jpa.JpaApplication           : No active profile set, falling back to default profiles: default
-2021-03-04 17:49:30.554  INFO 66123 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2021-03-04 17:49:30.640  INFO 66123 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 75 ms. Found 3 JPA repository interfaces.
-2021-03-04 17:49:31.203  INFO 66123 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'com.thebeastshop.forest.springboot.ForestAutoConfiguration' of type [com.thebeastshop.forest.springboot.ForestAutoConfiguration$$EnhancerBySpringCGLIB$$c556b2d7] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-03-04 17:49:31.250  INFO 66123 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'forestConfigurationProperties' of type [com.thebeastshop.forest.springboot.properties.ForestConfigurationProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-03-04 17:49:31.321  INFO 66123 --- [main] trationDelegate$BeanPostProcessorChecker : Bean '(inner bean)#3902bd2c' of type [com.dtflys.forest.interceptor.SpringInterceptorFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-03-04 17:49:31.330  INFO 66123 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'forestConfiguration' of type [com.dtflys.forest.config.ForestConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-03-04 17:49:31.387  INFO 66123 --- [main] c.d.f.scanner.ClassPathClientScanner     : [Forest] Created Forest Client Bean with name 'myClient' and Proxy of 'com.example.jpa.client.MyClient' client interface
-2021-03-04 17:49:31.403  INFO 66123 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'myClient' of type [com.dtflys.forest.beans.ClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-03-04 17:49:31.881  INFO 66123 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2021-03-04 17:49:31.897  INFO 66123 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2021-03-04 17:49:31.898  INFO 66123 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.43]
-2021-03-04 17:49:32.024  INFO 66123 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2021-03-04 17:49:32.025  INFO 66123 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2373 ms
-2021-03-04 17:49:32.624  INFO 66123 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2021-03-04 17:49:32.795  INFO 66123 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.28.Final
-2021-03-04 17:49:33.000  INFO 66123 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2021-03-04 17:49:33.130  INFO 66123 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2021-03-04 17:49:33.396  INFO 66123 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2021-03-04 17:49:33.524  INFO 66123 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-2021-03-04 17:49:33.989  WARN 66123 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is java.lang.IllegalStateException: Unable to instantiate AttributeConverter [com.example.jpa.enums.UserStatusEnum]
-2021-03-04 17:49:33.991  INFO 66123 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2021-03-04 17:49:34.207  INFO 66123 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2021-03-04 17:49:34.215  INFO 66123 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
-2021-03-04 17:49:34.232  INFO 66123 --- [main] ConditionEvaluationReportLoggingListener : 
-
-Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
-2021-03-04 17:49:34.279 ERROR 66123 --- [main] o.s.boot.SpringApplication               : Application run failed
-
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is java.lang.IllegalStateException: Unable to instantiate AttributeConverter [com.example.jpa.enums.UserStatusEnum]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1786) ~[spring-beans-5.3.4.jar:5.3.4]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:602) ~[spring-beans-5.3.4.jar:5.3.4]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:524) ~[spring-beans-5.3.4.jar:5.3.4]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.4.jar:5.3.4]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.4.jar:5.3.4]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.4.jar:5.3.4]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.4.jar:5.3.4]
-	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1153) ~[spring-context-5.3.4.jar:5.3.4]
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:907) ~[spring-context-5.3.4.jar:5.3.4]
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:582) ~[spring-context-5.3.4.jar:5.3.4]
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:144) ~[spring-boot-2.4.3.jar:2.4.3]
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:767) [spring-boot-2.4.3.jar:2.4.3]
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:759) [spring-boot-2.4.3.jar:2.4.3]
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:426) [spring-boot-2.4.3.jar:2.4.3]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:326) [spring-boot-2.4.3.jar:2.4.3]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1311) [spring-boot-2.4.3.jar:2.4.3]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1300) [spring-boot-2.4.3.jar:2.4.3]
-	at com.example.jpa.JpaApplication.main(JpaApplication.java:13) [classes/:na]
-Caused by: java.lang.IllegalStateException: Unable to instantiate AttributeConverter [com.example.jpa.enums.UserStatusEnum]
-	at org.hibernate.cfg.AbstractPropertyHolder.buildExceptionFromInstantiationError(AbstractPropertyHolder.java:113) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
-	at org.hibernate.cfg.AbstractPropertyHolder.resolveAttributeConverterDescriptor(AbstractPropertyHolder.java:89) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
-	at org.hibernate.cfg.annotations.PropertyBinder.makePropertyAndValue(PropertyBinder.java:189) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
-	at org.hibernate.cfg.annotations.PropertyBinder.makePropertyValueAndBind(PropertyBinder.java:205) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
-	at org.hibernate.cfg.AnnotationBinder.processElementAnnotations(AnnotationBinder.java:2300) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
-	at org.hibernate.cfg.AnnotationBinder.processIdPropertiesIfNotAlready(AnnotationBinder.java:979) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
-	at org.hibernate.cfg.AnnotationBinder.bindClass(AnnotationBinder.java:806) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
-	at org.hibernate.boot.model.source.internal.annotations.AnnotationMetadataSourceProcessorImpl.processEntityHierarchies(AnnotationMetadataSourceProcessorImpl.java:248) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
-	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess$1.processEntityHierarchies(MetadataBuildingProcess.java:239) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
-	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:282) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
-	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1224) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
-	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1255) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
-	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58) ~[spring-orm-5.3.4.jar:5.3.4]
-	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365) ~[spring-orm-5.3.4.jar:5.3.4]
-	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409) ~[spring-orm-5.3.4.jar:5.3.4]
-	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396) ~[spring-orm-5.3.4.jar:5.3.4]
-	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341) ~[spring-orm-5.3.4.jar:5.3.4]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1845) ~[spring-beans-5.3.4.jar:5.3.4]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1782) ~[spring-beans-5.3.4.jar:5.3.4]
-	... 17 common frames omitted
-Caused by: org.hibernate.AnnotationException: Unable to create AttributeConverter instance
-	at org.hibernate.cfg.AbstractPropertyHolder.makeAttributeConverterDescriptor(AbstractPropertyHolder.java:131) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
-	at org.hibernate.cfg.AbstractPropertyHolder.resolveAttributeConverterDescriptor(AbstractPropertyHolder.java:86) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
-	... 34 common frames omitted
-Caused by: org.hibernate.AnnotationException: Could not extract type parameter information from AttributeConverter implementation [com.example.jpa.enums.UserStatusEnum]
-	at org.hibernate.boot.model.convert.internal.AbstractConverterDescriptor.<init>(AbstractConverterDescriptor.java:47) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
-	at org.hibernate.boot.model.convert.internal.ClassBasedConverterDescriptor.<init>(ClassBasedConverterDescriptor.java:32) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
-	at org.hibernate.cfg.AbstractPropertyHolder.makeAttributeConverterDescriptor(AbstractPropertyHolder.java:127) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
-	... 35 common frames omitted
-
-2021-03-04 17:50:24.838  INFO 66161 --- [main] com.example.jpa.JpaApplication           : Starting JpaApplication using Java 1.8.0_191 on Sigmob-Mac-mini.local with PID 66161 (/Users/happyelements/IdeaProjects/learn-jpa/target/classes started by happyelements in /Users/happyelements/IdeaProjects/learn-jpa)
-2021-03-04 17:50:24.856 DEBUG 66161 --- [main] com.example.jpa.JpaApplication           : Running with Spring Boot v2.4.3, Spring v5.3.4
-2021-03-04 17:50:24.858  INFO 66161 --- [main] com.example.jpa.JpaApplication           : No active profile set, falling back to default profiles: default
-2021-03-04 17:50:26.058  INFO 66161 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2021-03-04 17:50:26.140  INFO 66161 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 69 ms. Found 3 JPA repository interfaces.
-2021-03-04 17:50:26.825  INFO 66161 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'com.thebeastshop.forest.springboot.ForestAutoConfiguration' of type [com.thebeastshop.forest.springboot.ForestAutoConfiguration$$EnhancerBySpringCGLIB$$45a0fa83] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-03-04 17:50:26.856  INFO 66161 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'forestConfigurationProperties' of type [com.thebeastshop.forest.springboot.properties.ForestConfigurationProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-03-04 17:50:26.909  INFO 66161 --- [main] trationDelegate$BeanPostProcessorChecker : Bean '(inner bean)#4f0cab0a' of type [com.dtflys.forest.interceptor.SpringInterceptorFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-03-04 17:50:26.917  INFO 66161 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'forestConfiguration' of type [com.dtflys.forest.config.ForestConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-03-04 17:50:26.962  INFO 66161 --- [main] c.d.f.scanner.ClassPathClientScanner     : [Forest] Created Forest Client Bean with name 'myClient' and Proxy of 'com.example.jpa.client.MyClient' client interface
-2021-03-04 17:50:26.977  INFO 66161 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'myClient' of type [com.dtflys.forest.beans.ClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-03-04 17:50:27.705  INFO 66161 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2021-03-04 17:50:27.729  INFO 66161 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2021-03-04 17:50:27.730  INFO 66161 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.43]
-2021-03-04 17:50:27.894  INFO 66161 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2021-03-04 17:50:27.894  INFO 66161 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2951 ms
-2021-03-04 17:50:28.281  INFO 66161 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2021-03-04 17:50:28.357  INFO 66161 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.28.Final
-2021-03-04 17:50:28.589  INFO 66161 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2021-03-04 17:50:28.738  INFO 66161 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2021-03-04 17:50:28.963  INFO 66161 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2021-03-04 17:50:28.993  INFO 66161 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-2021-03-04 17:50:29.378  WARN 66161 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is java.lang.IllegalStateException: Unable to instantiate AttributeConverter [com.example.jpa.enums.UserStatusEnum]
-2021-03-04 17:50:29.379  INFO 66161 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2021-03-04 17:50:29.590  INFO 66161 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2021-03-04 17:50:29.600  INFO 66161 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
-2021-03-04 17:50:29.615  INFO 66161 --- [main] ConditionEvaluationReportLoggingListener : 
-
-Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
-2021-03-04 17:50:29.658 ERROR 66161 --- [main] o.s.boot.SpringApplication               : Application run failed
-
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is java.lang.IllegalStateException: Unable to instantiate AttributeConverter [com.example.jpa.enums.UserStatusEnum]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1786) ~[spring-beans-5.3.4.jar:5.3.4]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:602) ~[spring-beans-5.3.4.jar:5.3.4]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:524) ~[spring-beans-5.3.4.jar:5.3.4]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.4.jar:5.3.4]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.4.jar:5.3.4]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.4.jar:5.3.4]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.4.jar:5.3.4]
-	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1153) ~[spring-context-5.3.4.jar:5.3.4]
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:907) ~[spring-context-5.3.4.jar:5.3.4]
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:582) ~[spring-context-5.3.4.jar:5.3.4]
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:144) ~[spring-boot-2.4.3.jar:2.4.3]
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:767) [spring-boot-2.4.3.jar:2.4.3]
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:759) [spring-boot-2.4.3.jar:2.4.3]
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:426) [spring-boot-2.4.3.jar:2.4.3]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:326) [spring-boot-2.4.3.jar:2.4.3]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1311) [spring-boot-2.4.3.jar:2.4.3]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1300) [spring-boot-2.4.3.jar:2.4.3]
-	at com.example.jpa.JpaApplication.main(JpaApplication.java:13) [classes/:na]
-Caused by: java.lang.IllegalStateException: Unable to instantiate AttributeConverter [com.example.jpa.enums.UserStatusEnum]
-	at org.hibernate.cfg.AbstractPropertyHolder.buildExceptionFromInstantiationError(AbstractPropertyHolder.java:113) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
-	at org.hibernate.cfg.AbstractPropertyHolder.resolveAttributeConverterDescriptor(AbstractPropertyHolder.java:89) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
-	at org.hibernate.cfg.annotations.PropertyBinder.makePropertyAndValue(PropertyBinder.java:189) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
-	at org.hibernate.cfg.annotations.PropertyBinder.makePropertyValueAndBind(PropertyBinder.java:205) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
-	at org.hibernate.cfg.AnnotationBinder.processElementAnnotations(AnnotationBinder.java:2300) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
-	at org.hibernate.cfg.AnnotationBinder.processIdPropertiesIfNotAlready(AnnotationBinder.java:979) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
-	at org.hibernate.cfg.AnnotationBinder.bindClass(AnnotationBinder.java:806) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
-	at org.hibernate.boot.model.source.internal.annotations.AnnotationMetadataSourceProcessorImpl.processEntityHierarchies(AnnotationMetadataSourceProcessorImpl.java:248) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
-	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess$1.processEntityHierarchies(MetadataBuildingProcess.java:239) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
-	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:282) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
-	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1224) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
-	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1255) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
-	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58) ~[spring-orm-5.3.4.jar:5.3.4]
-	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365) ~[spring-orm-5.3.4.jar:5.3.4]
-	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409) ~[spring-orm-5.3.4.jar:5.3.4]
-	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396) ~[spring-orm-5.3.4.jar:5.3.4]
-	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341) ~[spring-orm-5.3.4.jar:5.3.4]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1845) ~[spring-beans-5.3.4.jar:5.3.4]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1782) ~[spring-beans-5.3.4.jar:5.3.4]
-	... 17 common frames omitted
-Caused by: org.hibernate.AnnotationException: Unable to create AttributeConverter instance
-	at org.hibernate.cfg.AbstractPropertyHolder.makeAttributeConverterDescriptor(AbstractPropertyHolder.java:131) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
-	at org.hibernate.cfg.AbstractPropertyHolder.resolveAttributeConverterDescriptor(AbstractPropertyHolder.java:86) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
-	... 34 common frames omitted
-Caused by: org.hibernate.AnnotationException: Could not extract type parameter information from AttributeConverter implementation [com.example.jpa.enums.UserStatusEnum]
-	at org.hibernate.boot.model.convert.internal.AbstractConverterDescriptor.<init>(AbstractConverterDescriptor.java:47) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
-	at org.hibernate.boot.model.convert.internal.ClassBasedConverterDescriptor.<init>(ClassBasedConverterDescriptor.java:32) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
-	at org.hibernate.cfg.AbstractPropertyHolder.makeAttributeConverterDescriptor(AbstractPropertyHolder.java:127) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
-	... 35 common frames omitted
-
-2021-03-04 17:51:55.418  INFO 66209 --- [main] com.example.jpa.JpaApplication           : Starting JpaApplication using Java 1.8.0_191 on Sigmob-Mac-mini.local with PID 66209 (/Users/happyelements/IdeaProjects/learn-jpa/target/classes started by happyelements in /Users/happyelements/IdeaProjects/learn-jpa)
-2021-03-04 17:51:55.424 DEBUG 66209 --- [main] com.example.jpa.JpaApplication           : Running with Spring Boot v2.4.3, Spring v5.3.4
-2021-03-04 17:51:55.426  INFO 66209 --- [main] com.example.jpa.JpaApplication           : No active profile set, falling back to default profiles: default
-2021-03-04 17:51:56.882  INFO 66209 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2021-03-04 17:51:56.968  INFO 66209 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 75 ms. Found 3 JPA repository interfaces.
-2021-03-04 17:51:57.716  INFO 66209 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'com.thebeastshop.forest.springboot.ForestAutoConfiguration' of type [com.thebeastshop.forest.springboot.ForestAutoConfiguration$$EnhancerBySpringCGLIB$$a92d344e] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-03-04 17:51:57.751  INFO 66209 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'forestConfigurationProperties' of type [com.thebeastshop.forest.springboot.properties.ForestConfigurationProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-03-04 17:51:57.939  INFO 66209 --- [main] trationDelegate$BeanPostProcessorChecker : Bean '(inner bean)#2bf94401' of type [com.dtflys.forest.interceptor.SpringInterceptorFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-03-04 17:51:57.965  INFO 66209 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'forestConfiguration' of type [com.dtflys.forest.config.ForestConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-03-04 17:51:58.159  INFO 66209 --- [main] c.d.f.scanner.ClassPathClientScanner     : [Forest] Created Forest Client Bean with name 'myClient' and Proxy of 'com.example.jpa.client.MyClient' client interface
-2021-03-04 17:51:58.238  INFO 66209 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'myClient' of type [com.dtflys.forest.beans.ClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-03-04 17:51:59.020  INFO 66209 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2021-03-04 17:51:59.032  INFO 66209 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2021-03-04 17:51:59.032  INFO 66209 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.43]
-2021-03-04 17:51:59.161  INFO 66209 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2021-03-04 17:51:59.162  INFO 66209 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3558 ms
-2021-03-04 17:51:59.503  INFO 66209 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2021-03-04 17:51:59.570  INFO 66209 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.28.Final
-2021-03-04 17:51:59.760  INFO 66209 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2021-03-04 17:51:59.889  INFO 66209 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2021-03-04 17:52:00.080  INFO 66209 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2021-03-04 17:52:00.102  INFO 66209 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-2021-03-04 17:52:00.298  WARN 66209 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is java.lang.IllegalStateException: Unable to instantiate AttributeConverter [com.example.jpa.enums.UserStatusEnum]
-2021-03-04 17:52:00.298  INFO 66209 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2021-03-04 17:52:00.505  INFO 66209 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2021-03-04 17:52:00.512  INFO 66209 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
-2021-03-04 17:52:00.524  INFO 66209 --- [main] ConditionEvaluationReportLoggingListener : 
-
-Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
-2021-03-04 17:52:00.552 ERROR 66209 --- [main] o.s.boot.SpringApplication               : Application run failed
-
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is java.lang.IllegalStateException: Unable to instantiate AttributeConverter [com.example.jpa.enums.UserStatusEnum]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1786) ~[spring-beans-5.3.4.jar:5.3.4]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:602) ~[spring-beans-5.3.4.jar:5.3.4]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:524) ~[spring-beans-5.3.4.jar:5.3.4]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.4.jar:5.3.4]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.4.jar:5.3.4]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.4.jar:5.3.4]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.4.jar:5.3.4]
-	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1153) ~[spring-context-5.3.4.jar:5.3.4]
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:907) ~[spring-context-5.3.4.jar:5.3.4]
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:582) ~[spring-context-5.3.4.jar:5.3.4]
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:144) ~[spring-boot-2.4.3.jar:2.4.3]
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:767) [spring-boot-2.4.3.jar:2.4.3]
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:759) [spring-boot-2.4.3.jar:2.4.3]
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:426) [spring-boot-2.4.3.jar:2.4.3]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:326) [spring-boot-2.4.3.jar:2.4.3]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1311) [spring-boot-2.4.3.jar:2.4.3]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1300) [spring-boot-2.4.3.jar:2.4.3]
-	at com.example.jpa.JpaApplication.main(JpaApplication.java:13) [classes/:na]
-Caused by: java.lang.IllegalStateException: Unable to instantiate AttributeConverter [com.example.jpa.enums.UserStatusEnum]
-	at org.hibernate.cfg.AbstractPropertyHolder.buildExceptionFromInstantiationError(AbstractPropertyHolder.java:113) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
-	at org.hibernate.cfg.AbstractPropertyHolder.resolveAttributeConverterDescriptor(AbstractPropertyHolder.java:89) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
-	at org.hibernate.cfg.annotations.PropertyBinder.makePropertyAndValue(PropertyBinder.java:189) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
-	at org.hibernate.cfg.annotations.PropertyBinder.makePropertyValueAndBind(PropertyBinder.java:205) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
-	at org.hibernate.cfg.AnnotationBinder.processElementAnnotations(AnnotationBinder.java:2300) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
-	at org.hibernate.cfg.AnnotationBinder.processIdPropertiesIfNotAlready(AnnotationBinder.java:979) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
-	at org.hibernate.cfg.AnnotationBinder.bindClass(AnnotationBinder.java:806) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
-	at org.hibernate.boot.model.source.internal.annotations.AnnotationMetadataSourceProcessorImpl.processEntityHierarchies(AnnotationMetadataSourceProcessorImpl.java:248) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
-	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess$1.processEntityHierarchies(MetadataBuildingProcess.java:239) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
-	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:282) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
-	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1224) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
-	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1255) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
-	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58) ~[spring-orm-5.3.4.jar:5.3.4]
-	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365) ~[spring-orm-5.3.4.jar:5.3.4]
-	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409) ~[spring-orm-5.3.4.jar:5.3.4]
-	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396) ~[spring-orm-5.3.4.jar:5.3.4]
-	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341) ~[spring-orm-5.3.4.jar:5.3.4]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1845) ~[spring-beans-5.3.4.jar:5.3.4]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1782) ~[spring-beans-5.3.4.jar:5.3.4]
-	... 17 common frames omitted
-Caused by: org.hibernate.AnnotationException: Unable to create AttributeConverter instance
-	at org.hibernate.cfg.AbstractPropertyHolder.makeAttributeConverterDescriptor(AbstractPropertyHolder.java:131) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
-	at org.hibernate.cfg.AbstractPropertyHolder.resolveAttributeConverterDescriptor(AbstractPropertyHolder.java:86) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
-	... 34 common frames omitted
-Caused by: org.hibernate.AnnotationException: Could not extract type parameter information from AttributeConverter implementation [com.example.jpa.enums.UserStatusEnum]
-	at org.hibernate.boot.model.convert.internal.AbstractConverterDescriptor.<init>(AbstractConverterDescriptor.java:47) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
-	at org.hibernate.boot.model.convert.internal.ClassBasedConverterDescriptor.<init>(ClassBasedConverterDescriptor.java:32) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
-	at org.hibernate.cfg.AbstractPropertyHolder.makeAttributeConverterDescriptor(AbstractPropertyHolder.java:127) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
-	... 35 common frames omitted
-
-2021-03-04 17:54:27.577  INFO 66290 --- [main] com.example.jpa.JpaApplication           : Starting JpaApplication using Java 1.8.0_191 on Sigmob-Mac-mini.local with PID 66290 (/Users/happyelements/IdeaProjects/learn-jpa/target/classes started by happyelements in /Users/happyelements/IdeaProjects/learn-jpa)
-2021-03-04 17:54:27.582 DEBUG 66290 --- [main] com.example.jpa.JpaApplication           : Running with Spring Boot v2.4.3, Spring v5.3.4
-2021-03-04 17:54:27.583  INFO 66290 --- [main] com.example.jpa.JpaApplication           : No active profile set, falling back to default profiles: default
-2021-03-04 17:54:28.965  INFO 66290 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2021-03-04 17:54:29.068  INFO 66290 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 90 ms. Found 3 JPA repository interfaces.
-2021-03-04 17:54:30.321  INFO 66290 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'com.thebeastshop.forest.springboot.ForestAutoConfiguration' of type [com.thebeastshop.forest.springboot.ForestAutoConfiguration$$EnhancerBySpringCGLIB$$6831b39c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-03-04 17:54:30.355  INFO 66290 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'forestConfigurationProperties' of type [com.thebeastshop.forest.springboot.properties.ForestConfigurationProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-03-04 17:54:30.411  INFO 66290 --- [main] trationDelegate$BeanPostProcessorChecker : Bean '(inner bean)#3166f664' of type [com.dtflys.forest.interceptor.SpringInterceptorFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-03-04 17:54:30.418  INFO 66290 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'forestConfiguration' of type [com.dtflys.forest.config.ForestConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-03-04 17:54:30.459  INFO 66290 --- [main] c.d.f.scanner.ClassPathClientScanner     : [Forest] Created Forest Client Bean with name 'myClient' and Proxy of 'com.example.jpa.client.MyClient' client interface
-2021-03-04 17:54:30.477  INFO 66290 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'myClient' of type [com.dtflys.forest.beans.ClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-03-04 17:54:30.983  INFO 66290 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2021-03-04 17:54:30.998  INFO 66290 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2021-03-04 17:54:30.998  INFO 66290 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.43]
-2021-03-04 17:54:31.135  INFO 66290 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2021-03-04 17:54:31.136  INFO 66290 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3410 ms
-2021-03-04 17:54:31.489  INFO 66290 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2021-03-04 17:54:31.570  INFO 66290 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.28.Final
-2021-03-04 17:54:31.806  INFO 66290 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2021-03-04 17:54:31.973  INFO 66290 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2021-03-04 17:54:32.201  INFO 66290 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2021-03-04 17:54:32.229  INFO 66290 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-2021-03-04 17:54:33.512  INFO 66290 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2021-03-04 17:54:33.526  INFO 66290 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2021-03-04 17:54:34.691  WARN 66290 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2021-03-04 17:54:35.336  INFO 66290 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2021-03-04 17:54:36.041  INFO 66290 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2021-03-04 17:54:36.053  INFO 66290 --- [main] com.example.jpa.JpaApplication           : Started JpaApplication in 9.535 seconds (JVM running for 11.571)
-2021-03-04 17:54:51.620  INFO 66290 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2021-03-04 17:54:51.622  INFO 66290 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2021-03-04 17:54:51.624  INFO 66290 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
-2021-03-04 17:54:52.120 ERROR 66290 --- [http-nio-8080-exec-1] c.e.jpa.core.ControllerExceptionHandler  : Captured an exception:
-
-org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public com.example.jpa.dto.UserDto com.example.jpa.controllers.UserController.createUser(com.example.jpa.param.UserInfo): [Field error in object 'userInfo' on field 'name': rejected value [null]; codes [NotBlank.userInfo.name,NotBlank.name,NotBlank.java.lang.String,NotBlank]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [userInfo.name,name]; arguments []; default message [name]]; default message [用户名不能为空]] 
-	at org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor.resolveArgument(RequestResponseBodyMethodProcessor.java:139) ~[spring-webmvc-5.3.4.jar:5.3.4]
-	at org.springframework.web.method.support.HandlerMethodArgumentResolverComposite.resolveArgument(HandlerMethodArgumentResolverComposite.java:121) ~[spring-web-5.3.4.jar:5.3.4]
-	at org.springframework.web.method.support.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:170) ~[spring-web-5.3.4.jar:5.3.4]
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:137) ~[spring-web-5.3.4.jar:5.3.4]
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106) ~[spring-webmvc-5.3.4.jar:5.3.4]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:894) ~[spring-webmvc-5.3.4.jar:5.3.4]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.4.jar:5.3.4]
-	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.4.jar:5.3.4]
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1060) ~[spring-webmvc-5.3.4.jar:5.3.4]
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:962) ~[spring-webmvc-5.3.4.jar:5.3.4]
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) [spring-webmvc-5.3.4.jar:5.3.4]
-	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909) [spring-webmvc-5.3.4.jar:5.3.4]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:652) [tomcat-embed-core-9.0.43.jar:4.0.FR]
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) [spring-webmvc-5.3.4.jar:5.3.4]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733) [tomcat-embed-core-9.0.43.jar:4.0.FR]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) [tomcat-embed-core-9.0.43.jar:9.0.43]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [tomcat-embed-core-9.0.43.jar:9.0.43]
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) [tomcat-embed-websocket-9.0.43.jar:9.0.43]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [tomcat-embed-core-9.0.43.jar:9.0.43]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [tomcat-embed-core-9.0.43.jar:9.0.43]
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) [spring-web-5.3.4.jar:5.3.4]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.3.4.jar:5.3.4]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [tomcat-embed-core-9.0.43.jar:9.0.43]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [tomcat-embed-core-9.0.43.jar:9.0.43]
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) [spring-web-5.3.4.jar:5.3.4]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.3.4.jar:5.3.4]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [tomcat-embed-core-9.0.43.jar:9.0.43]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [tomcat-embed-core-9.0.43.jar:9.0.43]
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) [spring-web-5.3.4.jar:5.3.4]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.3.4.jar:5.3.4]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [tomcat-embed-core-9.0.43.jar:9.0.43]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [tomcat-embed-core-9.0.43.jar:9.0.43]
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [tomcat-embed-core-9.0.43.jar:9.0.43]
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) [tomcat-embed-core-9.0.43.jar:9.0.43]
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542) [tomcat-embed-core-9.0.43.jar:9.0.43]
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143) [tomcat-embed-core-9.0.43.jar:9.0.43]
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.43.jar:9.0.43]
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) [tomcat-embed-core-9.0.43.jar:9.0.43]
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:346) [tomcat-embed-core-9.0.43.jar:9.0.43]
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374) [tomcat-embed-core-9.0.43.jar:9.0.43]
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.43.jar:9.0.43]
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:887) [tomcat-embed-core-9.0.43.jar:9.0.43]
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1684) [tomcat-embed-core-9.0.43.jar:9.0.43]
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.43.jar:9.0.43]
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_191]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_191]
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.43.jar:9.0.43]
-	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_191]
-
-2021-03-04 17:55:11.823 DEBUG 66290 --- [http-nio-8080-exec-4] com.example.jpa.core.ControllerLogAop    : Request URL: [http://localhost:8080/create], URI: [/create], Request Method: [POST], IP: [0:0:0:0:0:0:0:1]
-2021-03-04 17:55:11.854 DEBUG 66290 --- [http-nio-8080-exec-4] com.example.jpa.core.ControllerLogAop    : UserController.createUser Parameters: [[{"name":"测试复制大萨达","id":0,"status":"NOT_ACTIVE"}]]
-2021-03-04 17:55:20.596  INFO 66290 --- [http-nio-8080-exec-4] c.e.jpa.event.user.UserCreateEvent       : 新建用户：测试复制大萨达
-2021-03-04 17:55:20.597  INFO 66290 --- [http-nio-8080-exec-4] c.e.jpa.listener.UserEventListener       : UserEventListener: User(id=0, name=测试复制大萨达, password=null, birthday=null, updateTime=null, status=NOT_ACTIVE)
-2021-03-04 17:55:20.645 DEBUG 66290 --- [http-nio-8080-exec-4] com.example.jpa.core.ControllerLogAop    : UserController.createUser Response: [{"id":0,"name":"测试复制大萨达","password":null,"birthday":null}]
-2021-03-04 17:55:20.646 DEBUG 66290 --- [http-nio-8080-exec-4] com.example.jpa.core.ControllerLogAop    : Usage:
-StopWatch '/create': running time = 8840224392 ns
+2021-03-05 17:34:43.034  INFO 4924 --- [main] com.example.jpa.JpaApplication           : Starting JpaApplication using Java 1.8.0_191 on Sigmob-Mac-mini.local with PID 4924 (/Users/happyelements/IdeaProjects/learn-jpa/target/classes started by happyelements in /Users/happyelements/IdeaProjects/learn-jpa)
+2021-03-05 17:34:43.037 DEBUG 4924 --- [main] com.example.jpa.JpaApplication           : Running with Spring Boot v2.4.3, Spring v5.3.4
+2021-03-05 17:34:43.044  INFO 4924 --- [main] com.example.jpa.JpaApplication           : No active profile set, falling back to default profiles: default
+2021-03-05 17:34:45.843  INFO 4924 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-03-05 17:34:46.015  INFO 4924 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 134 ms. Found 3 JPA repository interfaces.
+2021-03-05 17:34:47.113  INFO 4924 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'com.thebeastshop.forest.springboot.ForestAutoConfiguration' of type [com.thebeastshop.forest.springboot.ForestAutoConfiguration$$EnhancerBySpringCGLIB$$f8a767c1] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-03-05 17:34:47.153  INFO 4924 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'forestConfigurationProperties' of type [com.thebeastshop.forest.springboot.properties.ForestConfigurationProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-03-05 17:34:47.250  INFO 4924 --- [main] trationDelegate$BeanPostProcessorChecker : Bean '(inner bean)#1ba05e38' of type [com.dtflys.forest.interceptor.SpringInterceptorFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-03-05 17:34:47.258  INFO 4924 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'forestConfiguration' of type [com.dtflys.forest.config.ForestConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-03-05 17:34:47.307  INFO 4924 --- [main] c.d.f.scanner.ClassPathClientScanner     : [Forest] Created Forest Client Bean with name 'myClient' and Proxy of 'com.example.jpa.client.MyClient' client interface
+2021-03-05 17:34:47.325  INFO 4924 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'myClient' of type [com.dtflys.forest.beans.ClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-03-05 17:34:47.998  INFO 4924 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-03-05 17:34:48.011  INFO 4924 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-03-05 17:34:48.012  INFO 4924 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.43]
+2021-03-05 17:34:48.191  INFO 4924 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-03-05 17:34:48.192  INFO 4924 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4888 ms
+2021-03-05 17:34:48.560  INFO 4924 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-03-05 17:34:48.632  INFO 4924 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.28.Final
+2021-03-05 17:34:48.827  INFO 4924 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-03-05 17:34:48.969  INFO 4924 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-03-05 17:34:49.178  INFO 4924 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-03-05 17:34:49.213  INFO 4924 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2021-03-05 17:34:50.219  INFO 4924 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-03-05 17:34:50.230  INFO 4924 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-03-05 17:34:51.551  WARN 4924 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-03-05 17:34:52.230  INFO 4924 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-03-05 17:34:53.006  INFO 4924 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-03-05 17:34:53.017  INFO 4924 --- [main] com.example.jpa.JpaApplication           : Started JpaApplication in 10.985 seconds (JVM running for 12.292)
+2021-03-05 17:35:32.402  INFO 4924 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-03-05 17:35:32.409  INFO 4924 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-03-05 17:35:32.435  INFO 4924 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 21 ms
+2021-03-05 17:35:37.836 DEBUG 4924 --- [http-nio-8080-exec-2] com.example.jpa.core.ControllerLogAop    : Request URL: [http://localhost:8080/create], URI: [/create], Request Method: [POST], IP: [0:0:0:0:0:0:0:1]
+2021-03-05 17:35:38.345 DEBUG 4924 --- [http-nio-8080-exec-2] com.example.jpa.core.ControllerLogAop    : UserController.createUser Parameters: [[{"name":"测试复制大萨达","id":0,"status":0}]]
+2021-03-05 17:35:39.474  INFO 4924 --- [http-nio-8080-exec-2] c.e.jpa.event.user.UserCreateEvent       : 新建用户：测试复制大萨达
+2021-03-05 17:35:39.558 DEBUG 4924 --- [http-nio-8080-exec-2] com.example.jpa.core.ControllerLogAop    : UserController.createUser Response: [{"id":0,"name":"测试复制大萨达","password":null,"birthday":null}]
+2021-03-05 17:35:39.564 DEBUG 4924 --- [http-nio-8080-exec-2] com.example.jpa.core.ControllerLogAop    : Usage:
+StopWatch '/create': running time = 1775270724 ns
 ---------------------------------------------
 ns         %     Task name
 ---------------------------------------------
-050131966  001%  PrintRequest
-8788600495  099%  UserController#createUser
-001491931  000%  PrintResponse
+559699859  032%  PrintRequest
+1210267947  068%  UserController#createUser
+005302918  000%  PrintResponse
 
-2021-03-04 17:55:20.656  INFO 66290 --- [http-nio-8080-exec-4] c.e.j.core.CommonResultControllerAdvice  : com.example.jpa.dto.UserDto
-2021-03-04 17:55:20.656  INFO 66290 --- [http-nio-8080-exec-4] c.e.j.core.CommonResultControllerAdvice  : [interface com.example.jpa.dto.base.OutputConverter]
-2021-03-04 17:55:29.878 DEBUG 66290 --- [http-nio-8080-exec-5] com.example.jpa.core.ControllerLogAop    : Request URL: [http://localhost:8080/userList], URI: [/userList], Request Method: [GET], IP: [0:0:0:0:0:0:0:1]
-2021-03-04 17:55:29.885 DEBUG 66290 --- [http-nio-8080-exec-5] com.example.jpa.core.ControllerLogAop    : UserController.getAllUsers Parameters: [[]]
-2021-03-04 17:55:30.562 DEBUG 66290 --- [http-nio-8080-exec-5] com.example.jpa.core.ControllerLogAop    : UserController.getAllUsers Response: [{"content":[{"createTime":1614323347407,"id":6,"name":null,"password":null,"birthday":null,"updateTime":1614323347407,"status":null},{"createTime":1614323276410,"id":5,"name":null,"password":null,"birthday":null,"updateTime":1614323276410,"status":null},{"createTime":1614252126520,"id":4,"name":"dasd","password":"123456","birthday":"2008-08-08","updateTime":1614252126520,"status":null},{"createTime":1614252070717,"id":3,"name":"dasd","password":"123456","birthday":"2008-08-08","updateTime":1614252070717,"status":null},{"createTime":1614251805678,"id":1,"name":"dasd","password":"123456","birthday":"2008-08-08","updateTime":1614251805678,"status":null}],"pageable":{"sort":{"unsorted":false,"sorted":true,"empty":false},"offset":10,"pageNumber":1,"pageSize":10,"paged":true,"unpaged":false},"totalElements":15,"totalPages":2,"last":true,"size":10,"number":1,"sort":{"unsorted":false,"sorted":true,"empty":false},"numberOfElements":5,"first":false,"empty":false}]
-2021-03-04 17:55:30.575 DEBUG 66290 --- [http-nio-8080-exec-5] com.example.jpa.core.ControllerLogAop    : Usage:
-StopWatch '/userList': running time = 696856463 ns
----------------------------------------------
-ns         %     Task name
----------------------------------------------
-008534819  001%  PrintRequest
-556096428  080%  UserController#getAllUsers
-132225216  019%  PrintResponse
-
-2021-03-04 17:55:30.607  INFO 66290 --- [http-nio-8080-exec-5] c.e.j.core.CommonResultControllerAdvice  : org.springframework.data.domain.PageImpl
-2021-03-04 17:55:30.608  INFO 66290 --- [http-nio-8080-exec-5] c.e.j.core.CommonResultControllerAdvice  : [interface org.springframework.data.domain.Page]
-2021-03-04 17:56:08.170  INFO 66290 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2021-03-04 17:56:08.176  INFO 66290 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2021-03-04 17:56:08.183  INFO 66290 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2021-03-04 17:56:08.192  INFO 66290 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2021-03-04 17:56:22.803  INFO 66347 --- [main] com.example.jpa.JpaApplication           : Starting JpaApplication using Java 1.8.0_191 on Sigmob-Mac-mini.local with PID 66347 (/Users/happyelements/IdeaProjects/learn-jpa/target/classes started by happyelements in /Users/happyelements/IdeaProjects/learn-jpa)
-2021-03-04 17:56:22.897 DEBUG 66347 --- [main] com.example.jpa.JpaApplication           : Running with Spring Boot v2.4.3, Spring v5.3.4
-2021-03-04 17:56:22.902  INFO 66347 --- [main] com.example.jpa.JpaApplication           : No active profile set, falling back to default profiles: default
-2021-03-04 17:56:25.464  INFO 66347 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2021-03-04 17:56:25.767  INFO 66347 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 290 ms. Found 3 JPA repository interfaces.
-2021-03-04 17:56:26.695  INFO 66347 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'com.thebeastshop.forest.springboot.ForestAutoConfiguration' of type [com.thebeastshop.forest.springboot.ForestAutoConfiguration$$EnhancerBySpringCGLIB$$b420b9e7] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-03-04 17:56:26.728  INFO 66347 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'forestConfigurationProperties' of type [com.thebeastshop.forest.springboot.properties.ForestConfigurationProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-03-04 17:56:26.782  INFO 66347 --- [main] trationDelegate$BeanPostProcessorChecker : Bean '(inner bean)#7523a3dc' of type [com.dtflys.forest.interceptor.SpringInterceptorFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-03-04 17:56:26.791  INFO 66347 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'forestConfiguration' of type [com.dtflys.forest.config.ForestConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-03-04 17:56:27.096  INFO 66347 --- [main] c.d.f.scanner.ClassPathClientScanner     : [Forest] Created Forest Client Bean with name 'myClient' and Proxy of 'com.example.jpa.client.MyClient' client interface
-2021-03-04 17:56:27.120  INFO 66347 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'myClient' of type [com.dtflys.forest.beans.ClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-03-04 17:56:27.646  INFO 66347 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2021-03-04 17:56:27.661  INFO 66347 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2021-03-04 17:56:27.663  INFO 66347 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.43]
-2021-03-04 17:56:27.798  INFO 66347 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2021-03-04 17:56:27.799  INFO 66347 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4694 ms
-2021-03-04 17:56:28.275  INFO 66347 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2021-03-04 17:56:28.337  INFO 66347 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.28.Final
-2021-03-04 17:56:28.565  INFO 66347 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2021-03-04 17:56:28.719  INFO 66347 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2021-03-04 17:56:28.975  INFO 66347 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2021-03-04 17:56:29.004  INFO 66347 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-2021-03-04 17:56:30.346  INFO 66347 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2021-03-04 17:56:30.370  INFO 66347 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2021-03-04 17:56:32.480  WARN 66347 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2021-03-04 17:56:33.232  INFO 66347 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2021-03-04 17:56:33.970  INFO 66347 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2021-03-04 17:56:33.991  INFO 66347 --- [main] com.example.jpa.JpaApplication           : Started JpaApplication in 13.405 seconds (JVM running for 16.54)
-2021-03-04 17:56:57.501  INFO 66347 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2021-03-04 17:56:57.513  INFO 66347 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2021-03-04 17:56:57.515  INFO 66347 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
-2021-03-04 17:56:57.630 DEBUG 66347 --- [http-nio-8080-exec-2] com.example.jpa.core.ControllerLogAop    : Request URL: [http://localhost:8080/userList], URI: [/userList], Request Method: [GET], IP: [0:0:0:0:0:0:0:1]
-2021-03-04 17:56:57.695 DEBUG 66347 --- [http-nio-8080-exec-2] com.example.jpa.core.ControllerLogAop    : UserController.getAllUsers Parameters: [[]]
-2021-03-04 17:56:58.958 DEBUG 66347 --- [http-nio-8080-exec-2] com.example.jpa.core.ControllerLogAop    : UserController.getAllUsers Response: [{"content":[{"createTime":1614851720526,"id":18,"name":"测试复制大萨达","password":null,"birthday":null,"updateTime":1614851720526,"status":"NOT_ACTIVE"},{"createTime":1614339290933,"id":16,"name":"测试复制大萨达食物2","password":null,"birthday":null,"updateTime":1614339290933,"status":null},{"createTime":1614339105333,"id":15,"name":"测试复制大萨达食物","password":null,"birthday":null,"updateTime":1614339105333,"status":null},{"createTime":1614338999525,"id":13,"name":"测试复制大萨达","password":null,"birthday":null,"updateTime":1614338999525,"status":null},{"createTime":1614337762445,"id":12,"name":"测试复制大萨达","password":null,"birthday":null,"updateTime":1614337762445,"status":null},{"createTime":1614337708773,"id":11,"name":"测试复制大萨达","password":null,"birthday":null,"updateTime":1614337708773,"status":null},{"createTime":1614337647239,"id":10,"name":"测试复制大萨达","password":null,"birthday":null,"updateTime":1614337647239,"status":null},{"createTime":1614336556225,"id":9,"name":"测试复制大萨达","password":null,"birthday":null,"updateTime":1614336556225,"status":null},{"createTime":1614323442975,"id":8,"name":"测试复制","password":null,"birthday":null,"updateTime":1614323442975,"status":null},{"createTime":1614323374222,"id":7,"name":null,"password":null,"birthday":null,"updateTime":1614323374222,"status":null},{"createTime":1614323347407,"id":6,"name":null,"password":null,"birthday":null,"updateTime":1614323347407,"status":null},{"createTime":1614323276410,"id":5,"name":null,"password":null,"birthday":null,"updateTime":1614323276410,"status":null},{"createTime":1614252126520,"id":4,"name":"dasd","password":"123456","birthday":"2008-08-08","updateTime":1614252126520,"status":null},{"createTime":1614252070717,"id":3,"name":"dasd","password":"123456","birthday":"2008-08-08","updateTime":1614252070717,"status":null},{"createTime":1614251805678,"id":1,"name":"dasd","password":"123456","birthday":"2008-08-08","updateTime":1614251805678,"status":null}],"pageable":{"sort":{"unsorted":false,"sorted":true,"empty":false},"offset":0,"pageNumber":0,"pageSize":100,"paged":true,"unpaged":false},"last":true,"totalElements":15,"totalPages":1,"size":100,"number":0,"numberOfElements":15,"sort":{"unsorted":false,"sorted":true,"empty":false},"first":true,"empty":false}]
-2021-03-04 17:56:58.960 DEBUG 66347 --- [http-nio-8080-exec-2] com.example.jpa.core.ControllerLogAop    : Usage:
-StopWatch '/userList': running time = 1342467876 ns
----------------------------------------------
-ns         %     Task name
----------------------------------------------
-081730288  006%  PrintRequest
-718001599  053%  UserController#getAllUsers
-542735989  040%  PrintResponse
-
-2021-03-04 17:56:58.998  INFO 66347 --- [http-nio-8080-exec-2] c.e.j.core.CommonResultControllerAdvice  : org.springframework.data.domain.PageImpl
-2021-03-04 17:56:59.000  INFO 66347 --- [http-nio-8080-exec-2] c.e.j.core.CommonResultControllerAdvice  : [interface org.springframework.data.domain.Page]
-2021-03-04 17:57:39.323  INFO 66347 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2021-03-04 17:57:39.327  INFO 66347 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2021-03-04 17:57:39.334  INFO 66347 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2021-03-04 17:57:39.366  INFO 66347 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2021-03-04 17:57:57.505  INFO 66391 --- [main] com.example.jpa.JpaApplication           : Starting JpaApplication using Java 1.8.0_191 on Sigmob-Mac-mini.local with PID 66391 (/Users/happyelements/IdeaProjects/learn-jpa/target/classes started by happyelements in /Users/happyelements/IdeaProjects/learn-jpa)
-2021-03-04 17:57:57.514 DEBUG 66391 --- [main] com.example.jpa.JpaApplication           : Running with Spring Boot v2.4.3, Spring v5.3.4
-2021-03-04 17:57:57.515  INFO 66391 --- [main] com.example.jpa.JpaApplication           : No active profile set, falling back to default profiles: default
-2021-03-04 17:57:58.552  INFO 66391 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2021-03-04 17:57:58.649  INFO 66391 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 83 ms. Found 3 JPA repository interfaces.
-2021-03-04 17:57:59.184  INFO 66391 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'com.thebeastshop.forest.springboot.ForestAutoConfiguration' of type [com.thebeastshop.forest.springboot.ForestAutoConfiguration$$EnhancerBySpringCGLIB$$330712a4] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-03-04 17:57:59.232  INFO 66391 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'forestConfigurationProperties' of type [com.thebeastshop.forest.springboot.properties.ForestConfigurationProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-03-04 17:57:59.284  INFO 66391 --- [main] trationDelegate$BeanPostProcessorChecker : Bean '(inner bean)#6b63e6ad' of type [com.dtflys.forest.interceptor.SpringInterceptorFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-03-04 17:57:59.292  INFO 66391 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'forestConfiguration' of type [com.dtflys.forest.config.ForestConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-03-04 17:57:59.338  INFO 66391 --- [main] c.d.f.scanner.ClassPathClientScanner     : [Forest] Created Forest Client Bean with name 'myClient' and Proxy of 'com.example.jpa.client.MyClient' client interface
-2021-03-04 17:57:59.352  INFO 66391 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'myClient' of type [com.dtflys.forest.beans.ClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-03-04 17:57:59.817  INFO 66391 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2021-03-04 17:57:59.828  INFO 66391 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2021-03-04 17:57:59.828  INFO 66391 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.43]
-2021-03-04 17:57:59.948  INFO 66391 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2021-03-04 17:57:59.949  INFO 66391 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2318 ms
-2021-03-04 17:58:00.455  INFO 66391 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2021-03-04 17:58:00.514  INFO 66391 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.28.Final
-2021-03-04 17:58:00.827  INFO 66391 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2021-03-04 17:58:01.129  INFO 66391 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2021-03-04 17:58:01.473  INFO 66391 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2021-03-04 17:58:01.505  INFO 66391 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-2021-03-04 17:58:02.721  INFO 66391 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2021-03-04 17:58:02.732  INFO 66391 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2021-03-04 17:58:03.881  WARN 66391 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2021-03-04 17:58:04.543  INFO 66391 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2021-03-04 17:58:05.172  INFO 66391 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2021-03-04 17:58:05.184  INFO 66391 --- [main] com.example.jpa.JpaApplication           : Started JpaApplication in 9.281 seconds (JVM running for 12.039)
-2021-03-04 17:58:11.418  INFO 66391 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2021-03-04 17:58:11.418  INFO 66391 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2021-03-04 17:58:11.420  INFO 66391 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2021-03-04 17:58:11.499 DEBUG 66391 --- [http-nio-8080-exec-1] com.example.jpa.core.ControllerLogAop    : Request URL: [http://localhost:8080/userList], URI: [/userList], Request Method: [GET], IP: [0:0:0:0:0:0:0:1]
-2021-03-04 17:58:11.536 DEBUG 66391 --- [http-nio-8080-exec-1] com.example.jpa.core.ControllerLogAop    : UserController.getAllUsers Parameters: [[]]
-2021-03-04 17:58:12.032 DEBUG 66391 --- [http-nio-8080-exec-1] com.example.jpa.core.ControllerLogAop    : UserController.getAllUsers Response: [{"content":[{"createTime":1614851720526,"id":18,"name":"测试复制大萨达","password":null,"birthday":null,"updateTime":1614851720526,"status":"NOT_ACTIVE"},{"createTime":1614339290933,"id":16,"name":"测试复制大萨达食物2","password":null,"birthday":null,"updateTime":1614339290933,"status":null},{"createTime":1614339105333,"id":15,"name":"测试复制大萨达食物","password":null,"birthday":null,"updateTime":1614339105333,"status":null},{"createTime":1614338999525,"id":13,"name":"测试复制大萨达","password":null,"birthday":null,"updateTime":1614338999525,"status":null},{"createTime":1614337762445,"id":12,"name":"测试复制大萨达","password":null,"birthday":null,"updateTime":1614337762445,"status":null},{"createTime":1614337708773,"id":11,"name":"测试复制大萨达","password":null,"birthday":null,"updateTime":1614337708773,"status":null},{"createTime":1614337647239,"id":10,"name":"测试复制大萨达","password":null,"birthday":null,"updateTime":1614337647239,"status":null},{"createTime":1614336556225,"id":9,"name":"测试复制大萨达","password":null,"birthday":null,"updateTime":1614336556225,"status":null},{"createTime":1614323442975,"id":8,"name":"测试复制","password":null,"birthday":null,"updateTime":1614323442975,"status":null},{"createTime":1614323374222,"id":7,"name":null,"password":null,"birthday":null,"updateTime":1614323374222,"status":null},{"createTime":1614323347407,"id":6,"name":null,"password":null,"birthday":null,"updateTime":1614323347407,"status":null},{"createTime":1614323276410,"id":5,"name":null,"password":null,"birthday":null,"updateTime":1614323276410,"status":null},{"createTime":1614252126520,"id":4,"name":"dasd","password":"123456","birthday":"2008-08-08","updateTime":1614252126520,"status":null},{"createTime":1614252070717,"id":3,"name":"dasd","password":"123456","birthday":"2008-08-08","updateTime":1614252070717,"status":null},{"createTime":1614251805678,"id":1,"name":"dasd","password":"123456","birthday":"2008-08-08","updateTime":1614251805678,"status":null}],"pageable":{"sort":{"sorted":true,"unsorted":false,"empty":false},"offset":0,"pageNumber":0,"pageSize":100,"paged":true,"unpaged":false},"totalElements":15,"totalPages":1,"last":true,"size":100,"number":0,"sort":{"sorted":true,"unsorted":false,"empty":false},"numberOfElements":15,"first":true,"empty":false}]
-2021-03-04 17:58:12.033 DEBUG 66391 --- [http-nio-8080-exec-1] com.example.jpa.core.ControllerLogAop    : Usage:
-StopWatch '/userList': running time = 546621016 ns
----------------------------------------------
-ns         %     Task name
----------------------------------------------
-050544500  009%  PrintRequest
-365412642  067%  UserController#getAllUsers
-130663874  024%  PrintResponse
-
-2021-03-04 17:58:12.064  INFO 66391 --- [http-nio-8080-exec-1] c.e.j.core.CommonResultControllerAdvice  : org.springframework.data.domain.PageImpl
-2021-03-04 17:58:12.065  INFO 66391 --- [http-nio-8080-exec-1] c.e.j.core.CommonResultControllerAdvice  : [interface org.springframework.data.domain.Page]
-2021-03-04 17:58:20.448  WARN 66391 --- [http-nio-8080-exec-3] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize value of type `com.example.jpa.enums.UserStatusEnum` from number 3: index value outside legal index range [0..1]; nested exception is com.fasterxml.jackson.databind.exc.InvalidFormatException: Cannot deserialize value of type `com.example.jpa.enums.UserStatusEnum` from number 3: index value outside legal index range [0..1]
- at [Source: (PushbackInputStream); line: 3, column: 15] (through reference chain: com.example.jpa.param.UserInfo["status"])]
-2021-03-04 17:58:20.606 DEBUG 66391 --- [http-nio-8080-exec-3] com.example.jpa.core.ControllerLogAop    : Request URL: [http://localhost:8080/error], URI: [/error], Request Method: [POST], IP: [0:0:0:0:0:0:0:1]
-2021-03-04 17:58:20.621 DEBUG 66391 --- [http-nio-8080-exec-3] com.example.jpa.core.ControllerLogAop    : BasicErrorController.error Response: [{"timestamp":1614851900615,"status":400,"error":"Bad Request","message":"","path":"/create"}]
-2021-03-04 17:58:20.632 DEBUG 66391 --- [http-nio-8080-exec-3] com.example.jpa.core.ControllerLogAop    : Usage:
-StopWatch '/error': running time = 25652731 ns
----------------------------------------------
-ns         %     Task name
----------------------------------------------
-000626433  002%  PrintRequest
-009202650  036%  BasicErrorController#error
-015823648  062%  PrintResponse
-
-2021-03-04 17:59:02.314  WARN 66391 --- [http-nio-8080-exec-5] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize value of type `com.example.jpa.enums.UserStatusEnum` from number 3: index value outside legal index range [0..1]; nested exception is com.fasterxml.jackson.databind.exc.InvalidFormatException: Cannot deserialize value of type `com.example.jpa.enums.UserStatusEnum` from number 3: index value outside legal index range [0..1]
- at [Source: (PushbackInputStream); line: 3, column: 15] (through reference chain: com.example.jpa.param.UserInfo["status"])]
-2021-03-04 17:59:02.367 DEBUG 66391 --- [http-nio-8080-exec-5] com.example.jpa.core.ControllerLogAop    : Request URL: [http://localhost:8080/error], URI: [/error], Request Method: [POST], IP: [0:0:0:0:0:0:0:1]
-2021-03-04 17:59:02.368 DEBUG 66391 --- [http-nio-8080-exec-5] com.example.jpa.core.ControllerLogAop    : BasicErrorController.error Response: [{"timestamp":1614851942367,"status":400,"error":"Bad Request","message":"","path":"/create"}]
-2021-03-04 17:59:02.368 DEBUG 66391 --- [http-nio-8080-exec-5] com.example.jpa.core.ControllerLogAop    : Usage:
-StopWatch '/error': running time = 1018570 ns
----------------------------------------------
-ns         %     Task name
----------------------------------------------
-000367529  036%  PrintRequest
-000134106  013%  BasicErrorController#error
-000516935  051%  PrintResponse
-
-2021-03-04 17:59:19.180  INFO 66391 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2021-03-04 17:59:19.183  INFO 66391 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2021-03-04 17:59:19.187  INFO 66391 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2021-03-04 17:59:19.192  INFO 66391 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2021-03-04 17:59:30.621  INFO 66432 --- [main] com.example.jpa.JpaApplication           : Starting JpaApplication using Java 1.8.0_191 on Sigmob-Mac-mini.local with PID 66432 (/Users/happyelements/IdeaProjects/learn-jpa/target/classes started by happyelements in /Users/happyelements/IdeaProjects/learn-jpa)
-2021-03-04 17:59:30.626 DEBUG 66432 --- [main] com.example.jpa.JpaApplication           : Running with Spring Boot v2.4.3, Spring v5.3.4
-2021-03-04 17:59:30.627  INFO 66432 --- [main] com.example.jpa.JpaApplication           : No active profile set, falling back to default profiles: default
-2021-03-04 17:59:32.021  INFO 66432 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2021-03-04 17:59:32.119  INFO 66432 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 86 ms. Found 3 JPA repository interfaces.
-2021-03-04 17:59:32.745  INFO 66432 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'com.thebeastshop.forest.springboot.ForestAutoConfiguration' of type [com.thebeastshop.forest.springboot.ForestAutoConfiguration$$EnhancerBySpringCGLIB$$9010b1e1] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-03-04 17:59:32.774  INFO 66432 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'forestConfigurationProperties' of type [com.thebeastshop.forest.springboot.properties.ForestConfigurationProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-03-04 17:59:32.852  INFO 66432 --- [main] trationDelegate$BeanPostProcessorChecker : Bean '(inner bean)#21da4b5f' of type [com.dtflys.forest.interceptor.SpringInterceptorFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-03-04 17:59:32.864  INFO 66432 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'forestConfiguration' of type [com.dtflys.forest.config.ForestConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-03-04 17:59:32.917  INFO 66432 --- [main] c.d.f.scanner.ClassPathClientScanner     : [Forest] Created Forest Client Bean with name 'myClient' and Proxy of 'com.example.jpa.client.MyClient' client interface
-2021-03-04 17:59:32.938  INFO 66432 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'myClient' of type [com.dtflys.forest.beans.ClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-03-04 17:59:33.548  INFO 66432 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2021-03-04 17:59:33.559  INFO 66432 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2021-03-04 17:59:33.560  INFO 66432 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.43]
-2021-03-04 17:59:33.842  INFO 66432 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2021-03-04 17:59:33.843  INFO 66432 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3003 ms
-2021-03-04 17:59:34.219  INFO 66432 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2021-03-04 17:59:34.276  INFO 66432 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.28.Final
-2021-03-04 17:59:34.409  INFO 66432 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2021-03-04 17:59:34.531  INFO 66432 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2021-03-04 17:59:34.681  INFO 66432 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2021-03-04 17:59:34.705  INFO 66432 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-2021-03-04 17:59:35.761  INFO 66432 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2021-03-04 17:59:35.773  INFO 66432 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2021-03-04 17:59:38.032  WARN 66432 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2021-03-04 17:59:38.762  INFO 66432 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2021-03-04 17:59:39.525  INFO 66432 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2021-03-04 17:59:39.537  INFO 66432 --- [main] com.example.jpa.JpaApplication           : Started JpaApplication in 11.124 seconds (JVM running for 13.979)
-2021-03-04 18:01:07.231  INFO 66432 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2021-03-04 18:01:07.233  INFO 66432 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2021-03-04 18:01:07.236  INFO 66432 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
-2021-03-04 18:01:07.427  WARN 66432 --- [http-nio-8080-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize value of type `com.example.jpa.enums.UserStatusEnum` from number 3: index value outside legal index range [0..1]; nested exception is com.fasterxml.jackson.databind.exc.InvalidFormatException: Cannot deserialize value of type `com.example.jpa.enums.UserStatusEnum` from number 3: index value outside legal index range [0..1]
- at [Source: (PushbackInputStream); line: 3, column: 15] (through reference chain: com.example.jpa.param.UserInfo["status"])]
-2021-03-04 18:01:07.487 DEBUG 66432 --- [http-nio-8080-exec-1] com.example.jpa.core.ControllerLogAop    : Request URL: [http://localhost:8080/error], URI: [/error], Request Method: [POST], IP: [0:0:0:0:0:0:0:1]
-2021-03-04 18:01:07.572 DEBUG 66432 --- [http-nio-8080-exec-1] com.example.jpa.core.ControllerLogAop    : BasicErrorController.error Response: [{"timestamp":1614852067505,"status":400,"error":"Bad Request","message":"","path":"/create"}]
-2021-03-04 18:01:07.573 DEBUG 66432 --- [http-nio-8080-exec-1] com.example.jpa.core.ControllerLogAop    : Usage:
-StopWatch '/error': running time = 97510950 ns
----------------------------------------------
-ns         %     Task name
----------------------------------------------
-012849213  013%  PrintRequest
-018071946  019%  BasicErrorController#error
-066589791  068%  PrintResponse
-
-2021-03-04 18:01:39.077  WARN 66432 --- [http-nio-8080-exec-4] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize value of type `com.example.jpa.enums.UserStatusEnum` from number 3: index value outside legal index range [0..1]; nested exception is com.fasterxml.jackson.databind.exc.InvalidFormatException: Cannot deserialize value of type `com.example.jpa.enums.UserStatusEnum` from number 3: index value outside legal index range [0..1]
- at [Source: (PushbackInputStream); line: 3, column: 15] (through reference chain: com.example.jpa.param.UserInfo["status"])]
-2021-03-04 18:01:39.082 DEBUG 66432 --- [http-nio-8080-exec-4] com.example.jpa.core.ControllerLogAop    : Request URL: [http://localhost:8080/error], URI: [/error], Request Method: [POST], IP: [0:0:0:0:0:0:0:1]
-2021-03-04 18:01:39.083 DEBUG 66432 --- [http-nio-8080-exec-4] com.example.jpa.core.ControllerLogAop    : BasicErrorController.error Response: [{"timestamp":1614852099082,"status":400,"error":"Bad Request","message":"","path":"/create"}]
-2021-03-04 18:01:39.084 DEBUG 66432 --- [http-nio-8080-exec-4] com.example.jpa.core.ControllerLogAop    : Usage:
-StopWatch '/error': running time = 1948805 ns
----------------------------------------------
-ns         %     Task name
----------------------------------------------
-000383661  020%  PrintRequest
-000092106  005%  BasicErrorController#error
-001473038  076%  PrintResponse
-
-2021-03-04 18:03:33.220  WARN 66432 --- [http-nio-8080-exec-6] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize value of type `com.example.jpa.enums.UserStatusEnum` from number 3: index value outside legal index range [0..1]; nested exception is com.fasterxml.jackson.databind.exc.InvalidFormatException: Cannot deserialize value of type `com.example.jpa.enums.UserStatusEnum` from number 3: index value outside legal index range [0..1]
- at [Source: (PushbackInputStream); line: 3, column: 15] (through reference chain: com.example.jpa.param.UserInfo["status"])]
-2021-03-04 18:03:33.224 DEBUG 66432 --- [http-nio-8080-exec-6] com.example.jpa.core.ControllerLogAop    : Request URL: [http://localhost:8080/error], URI: [/error], Request Method: [POST], IP: [0:0:0:0:0:0:0:1]
-2021-03-04 18:03:33.224 DEBUG 66432 --- [http-nio-8080-exec-6] com.example.jpa.core.ControllerLogAop    : BasicErrorController.error Response: [{"timestamp":1614852213224,"status":400,"error":"Bad Request","message":"","path":"/create"}]
-2021-03-04 18:03:33.225 DEBUG 66432 --- [http-nio-8080-exec-6] com.example.jpa.core.ControllerLogAop    : Usage:
-StopWatch '/error': running time = 1167411 ns
----------------------------------------------
-ns         %     Task name
----------------------------------------------
-000683620  059%  PrintRequest
-000148523  013%  BasicErrorController#error
-000335268  029%  PrintResponse
-
-2021-03-04 18:04:18.238  WARN 66432 --- [http-nio-8080-exec-7] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize value of type `com.example.jpa.enums.UserStatusEnum` from number 3: index value outside legal index range [0..1]; nested exception is com.fasterxml.jackson.databind.exc.InvalidFormatException: Cannot deserialize value of type `com.example.jpa.enums.UserStatusEnum` from number 3: index value outside legal index range [0..1]
- at [Source: (PushbackInputStream); line: 3, column: 15] (through reference chain: com.example.jpa.param.UserInfo["status"])]
-2021-03-04 18:04:18.247 DEBUG 66432 --- [http-nio-8080-exec-7] com.example.jpa.core.ControllerLogAop    : Request URL: [http://localhost:8080/error], URI: [/error], Request Method: [POST], IP: [0:0:0:0:0:0:0:1]
-2021-03-04 18:04:18.254 DEBUG 66432 --- [http-nio-8080-exec-7] com.example.jpa.core.ControllerLogAop    : BasicErrorController.error Response: [{"timestamp":1614852258252,"status":400,"error":"Bad Request","message":"","path":"/create"}]
-2021-03-04 18:04:18.257 DEBUG 66432 --- [http-nio-8080-exec-7] com.example.jpa.core.ControllerLogAop    : Usage:
-StopWatch '/error': running time = 8185752 ns
----------------------------------------------
-ns         %     Task name
----------------------------------------------
-004332101  053%  PrintRequest
-001989527  024%  BasicErrorController#error
-001864124  023%  PrintResponse
-
-2021-03-04 18:04:43.925  WARN 66432 --- [http-nio-8080-exec-10] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize value of type `com.example.jpa.enums.UserStatusEnum` from number 3: index value outside legal index range [0..1]; nested exception is com.fasterxml.jackson.databind.exc.InvalidFormatException: Cannot deserialize value of type `com.example.jpa.enums.UserStatusEnum` from number 3: index value outside legal index range [0..1]
- at [Source: (PushbackInputStream); line: 3, column: 15] (through reference chain: com.example.jpa.param.UserInfo["status"])]
-2021-03-04 18:04:43.936 DEBUG 66432 --- [http-nio-8080-exec-10] com.example.jpa.core.ControllerLogAop    : Request URL: [http://localhost:8080/error], URI: [/error], Request Method: [POST], IP: [0:0:0:0:0:0:0:1]
-2021-03-04 18:04:43.939 DEBUG 66432 --- [http-nio-8080-exec-10] com.example.jpa.core.ControllerLogAop    : BasicErrorController.error Response: [{"timestamp":1614852283938,"status":400,"error":"Bad Request","message":"","path":"/create"}]
-2021-03-04 18:04:43.941 DEBUG 66432 --- [http-nio-8080-exec-10] com.example.jpa.core.ControllerLogAop    : Usage:
-StopWatch '/error': running time = 4916685 ns
----------------------------------------------
-ns         %     Task name
----------------------------------------------
-002523735  051%  PrintRequest
-000488123  010%  BasicErrorController#error
-001904827  039%  PrintResponse
-
-2021-03-04 18:06:44.324  INFO 66432 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2021-03-04 18:06:44.328  INFO 66432 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2021-03-04 18:06:44.336  INFO 66432 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2021-03-04 18:06:44.343  INFO 66432 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2021-03-04 18:06:56.959  INFO 66636 --- [main] com.example.jpa.JpaApplication           : Starting JpaApplication using Java 1.8.0_191 on Sigmob-Mac-mini.local with PID 66636 (/Users/happyelements/IdeaProjects/learn-jpa/target/classes started by happyelements in /Users/happyelements/IdeaProjects/learn-jpa)
-2021-03-04 18:06:56.966 DEBUG 66636 --- [main] com.example.jpa.JpaApplication           : Running with Spring Boot v2.4.3, Spring v5.3.4
-2021-03-04 18:06:56.967  INFO 66636 --- [main] com.example.jpa.JpaApplication           : No active profile set, falling back to default profiles: default
-2021-03-04 18:06:58.422  INFO 66636 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2021-03-04 18:06:58.511  INFO 66636 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 78 ms. Found 3 JPA repository interfaces.
-2021-03-04 18:06:59.169  INFO 66636 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'com.thebeastshop.forest.springboot.ForestAutoConfiguration' of type [com.thebeastshop.forest.springboot.ForestAutoConfiguration$$EnhancerBySpringCGLIB$$9e4a155b] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-03-04 18:06:59.402  INFO 66636 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'forestConfigurationProperties' of type [com.thebeastshop.forest.springboot.properties.ForestConfigurationProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-03-04 18:06:59.562  INFO 66636 --- [main] trationDelegate$BeanPostProcessorChecker : Bean '(inner bean)#167381c7' of type [com.dtflys.forest.interceptor.SpringInterceptorFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-03-04 18:06:59.579  INFO 66636 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'forestConfiguration' of type [com.dtflys.forest.config.ForestConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-03-04 18:06:59.667  INFO 66636 --- [main] c.d.f.scanner.ClassPathClientScanner     : [Forest] Created Forest Client Bean with name 'myClient' and Proxy of 'com.example.jpa.client.MyClient' client interface
-2021-03-04 18:06:59.683  INFO 66636 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'myClient' of type [com.dtflys.forest.beans.ClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-03-04 18:07:00.157  INFO 66636 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2021-03-04 18:07:00.174  INFO 66636 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2021-03-04 18:07:00.174  INFO 66636 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.43]
-2021-03-04 18:07:00.424  INFO 66636 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2021-03-04 18:07:00.424  INFO 66636 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3239 ms
-2021-03-04 18:07:00.769  INFO 66636 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2021-03-04 18:07:00.826  INFO 66636 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.28.Final
-2021-03-04 18:07:00.994  INFO 66636 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2021-03-04 18:07:01.181  INFO 66636 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2021-03-04 18:07:01.405  INFO 66636 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2021-03-04 18:07:01.436  INFO 66636 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-2021-03-04 18:07:03.049  INFO 66636 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2021-03-04 18:07:03.085  INFO 66636 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2021-03-04 18:07:04.946  WARN 66636 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2021-03-04 18:07:06.330  INFO 66636 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2021-03-04 18:07:07.280  INFO 66636 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2021-03-04 18:07:07.311  INFO 66636 --- [main] com.example.jpa.JpaApplication           : Started JpaApplication in 11.806 seconds (JVM running for 13.932)
-2021-03-04 18:07:14.986  INFO 66636 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2021-03-04 18:07:14.990  INFO 66636 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2021-03-04 18:07:14.993  INFO 66636 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
-2021-03-04 18:07:15.267  WARN 66636 --- [http-nio-8080-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize value of type `com.example.jpa.enums.UserStatusEnum` from number 3: index value outside legal index range [0..1]; nested exception is com.fasterxml.jackson.databind.exc.InvalidFormatException: Cannot deserialize value of type `com.example.jpa.enums.UserStatusEnum` from number 3: index value outside legal index range [0..1]
- at [Source: (PushbackInputStream); line: 3, column: 15] (through reference chain: com.example.jpa.param.UserInfo["status"])]
-2021-03-04 18:07:15.346 DEBUG 66636 --- [http-nio-8080-exec-1] com.example.jpa.core.ControllerLogAop    : Request URL: [http://localhost:8080/error], URI: [/error], Request Method: [POST], IP: [0:0:0:0:0:0:0:1]
-2021-03-04 18:07:15.415 DEBUG 66636 --- [http-nio-8080-exec-1] com.example.jpa.core.ControllerLogAop    : BasicErrorController.error Response: [{"timestamp":1614852435377,"status":400,"error":"Bad Request","message":"","path":"/create"}]
-2021-03-04 18:07:15.416 DEBUG 66636 --- [http-nio-8080-exec-1] com.example.jpa.core.ControllerLogAop    : Usage:
-StopWatch '/error': running time = 84857126 ns
----------------------------------------------
-ns         %     Task name
----------------------------------------------
-016325762  019%  PrintRequest
-030685803  036%  BasicErrorController#error
-037845561  045%  PrintResponse
-
-2021-03-04 19:19:46.950  INFO 66636 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2021-03-04 19:19:46.973  INFO 66636 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2021-03-04 19:19:46.994  INFO 66636 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2021-03-04 19:19:47.000  INFO 66636 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2021-03-04 19:20:00.977  INFO 68556 --- [main] com.example.jpa.JpaApplication           : Starting JpaApplication using Java 1.8.0_191 on Sigmob-Mac-mini.local with PID 68556 (/Users/happyelements/IdeaProjects/learn-jpa/target/classes started by happyelements in /Users/happyelements/IdeaProjects/learn-jpa)
-2021-03-04 19:20:00.981 DEBUG 68556 --- [main] com.example.jpa.JpaApplication           : Running with Spring Boot v2.4.3, Spring v5.3.4
-2021-03-04 19:20:00.982  INFO 68556 --- [main] com.example.jpa.JpaApplication           : No active profile set, falling back to default profiles: default
-2021-03-04 19:20:02.318  INFO 68556 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2021-03-04 19:20:02.389  INFO 68556 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 62 ms. Found 3 JPA repository interfaces.
-2021-03-04 19:20:02.863  INFO 68556 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'com.thebeastshop.forest.springboot.ForestAutoConfiguration' of type [com.thebeastshop.forest.springboot.ForestAutoConfiguration$$EnhancerBySpringCGLIB$$b1b1a9d] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-03-04 19:20:02.891  INFO 68556 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'forestConfigurationProperties' of type [com.thebeastshop.forest.springboot.properties.ForestConfigurationProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-03-04 19:20:02.949  INFO 68556 --- [main] trationDelegate$BeanPostProcessorChecker : Bean '(inner bean)#77b9d0c7' of type [com.dtflys.forest.interceptor.SpringInterceptorFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-03-04 19:20:02.956  INFO 68556 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'forestConfiguration' of type [com.dtflys.forest.config.ForestConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-03-04 19:20:03.024  INFO 68556 --- [main] c.d.f.scanner.ClassPathClientScanner     : [Forest] Created Forest Client Bean with name 'myClient' and Proxy of 'com.example.jpa.client.MyClient' client interface
-2021-03-04 19:20:03.038  INFO 68556 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'myClient' of type [com.dtflys.forest.beans.ClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-03-04 19:20:03.468  INFO 68556 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2021-03-04 19:20:03.477  INFO 68556 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2021-03-04 19:20:03.478  INFO 68556 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.43]
-2021-03-04 19:20:03.605  INFO 68556 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2021-03-04 19:20:03.606  INFO 68556 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2487 ms
-2021-03-04 19:20:03.894  INFO 68556 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2021-03-04 19:20:03.934  INFO 68556 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.28.Final
-2021-03-04 19:20:04.052  INFO 68556 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2021-03-04 19:20:04.157  INFO 68556 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2021-03-04 19:20:04.299  INFO 68556 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2021-03-04 19:20:04.315  INFO 68556 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-2021-03-04 19:20:04.518 ERROR 68556 --- [main] j.LocalContainerEntityManagerFactoryBean : Failed to initialize JPA EntityManagerFactory: Unable to determine basic type mapping via reflection [com.example.jpa.pojo.User -> status]
-2021-03-04 19:20:04.519  WARN 68556 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is org.hibernate.MappingException: Unable to determine basic type mapping via reflection [com.example.jpa.pojo.User -> status]
-2021-03-04 19:20:04.519  INFO 68556 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2021-03-04 19:20:04.728  INFO 68556 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2021-03-04 19:20:04.733  INFO 68556 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
-2021-03-04 19:20:04.752  INFO 68556 --- [main] ConditionEvaluationReportLoggingListener : 
-
-Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
-2021-03-04 19:20:04.786 ERROR 68556 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
-
-***************************
-APPLICATION FAILED TO START
-***************************
-
-Description:
-
-Parameter 0 of constructor in com.example.jpa.enums.UserStatusConverter required a bean of type 'java.lang.Class' that could not be found.
-
-
-Action:
-
-Consider defining a bean of type 'java.lang.Class' in your configuration.
-
-2021-03-04 21:23:48.645  INFO 71634 --- [main] com.example.jpa.JpaApplication           : Starting JpaApplication using Java 1.8.0_191 on Sigmob-Mac-mini.local with PID 71634 (/Users/happyelements/IdeaProjects/learn-jpa/target/classes started by happyelements in /Users/happyelements/IdeaProjects/learn-jpa)
-2021-03-04 21:23:48.648 DEBUG 71634 --- [main] com.example.jpa.JpaApplication           : Running with Spring Boot v2.4.3, Spring v5.3.4
-2021-03-04 21:23:48.649  INFO 71634 --- [main] com.example.jpa.JpaApplication           : No active profile set, falling back to default profiles: default
-2021-03-04 21:23:49.764  INFO 71634 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2021-03-04 21:23:49.860  INFO 71634 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 76 ms. Found 3 JPA repository interfaces.
-2021-03-04 21:23:50.428  INFO 71634 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'com.thebeastshop.forest.springboot.ForestAutoConfiguration' of type [com.thebeastshop.forest.springboot.ForestAutoConfiguration$$EnhancerBySpringCGLIB$$40d6be03] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-03-04 21:23:50.452  INFO 71634 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'forestConfigurationProperties' of type [com.thebeastshop.forest.springboot.properties.ForestConfigurationProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-03-04 21:23:50.496  INFO 71634 --- [main] trationDelegate$BeanPostProcessorChecker : Bean '(inner bean)#28a6301f' of type [com.dtflys.forest.interceptor.SpringInterceptorFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-03-04 21:23:50.503  INFO 71634 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'forestConfiguration' of type [com.dtflys.forest.config.ForestConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-03-04 21:23:50.547  INFO 71634 --- [main] c.d.f.scanner.ClassPathClientScanner     : [Forest] Created Forest Client Bean with name 'myClient' and Proxy of 'com.example.jpa.client.MyClient' client interface
-2021-03-04 21:23:50.560  INFO 71634 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'myClient' of type [com.dtflys.forest.beans.ClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-03-04 21:23:50.975  INFO 71634 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2021-03-04 21:23:50.987  INFO 71634 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2021-03-04 21:23:50.987  INFO 71634 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.43]
-2021-03-04 21:23:51.091  INFO 71634 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2021-03-04 21:23:51.091  INFO 71634 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2375 ms
-2021-03-04 21:23:51.541  INFO 71634 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2021-03-04 21:23:51.919  INFO 71634 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.28.Final
-2021-03-04 21:23:52.343  INFO 71634 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2021-03-04 21:23:52.452  INFO 71634 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2021-03-04 21:23:52.637  INFO 71634 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2021-03-04 21:23:52.654  INFO 71634 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-2021-03-04 21:23:53.000 ERROR 71634 --- [main] j.LocalContainerEntityManagerFactoryBean : Failed to initialize JPA EntityManagerFactory: Unable to determine basic type mapping via reflection [com.example.jpa.pojo.User -> status]
-2021-03-04 21:23:53.000  WARN 71634 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is org.hibernate.MappingException: Unable to determine basic type mapping via reflection [com.example.jpa.pojo.User -> status]
-2021-03-04 21:23:53.001  INFO 71634 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2021-03-04 21:23:53.210  INFO 71634 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2021-03-04 21:23:53.215  INFO 71634 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
-2021-03-04 21:23:53.226  INFO 71634 --- [main] ConditionEvaluationReportLoggingListener : 
-
-Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
-2021-03-04 21:23:53.248 ERROR 71634 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
-
-***************************
-APPLICATION FAILED TO START
-***************************
-
-Description:
-
-Parameter 0 of constructor in com.example.jpa.enums.UserStatusConverter required a bean of type 'java.lang.Class' that could not be found.
-
-
-Action:
-
-Consider defining a bean of type 'java.lang.Class' in your configuration.
-
+2021-03-05 17:35:39.671  INFO 4924 --- [http-nio-8080-exec-2] c.e.j.core.CommonResultControllerAdvice  : com.example.jpa.dto.UserDto
+2021-03-05 17:35:39.672  INFO 4924 --- [http-nio-8080-exec-2] c.e.j.core.CommonResultControllerAdvice  : [interface com.example.jpa.dto.base.OutputConverter]
+2021-03-05 17:36:21.065  INFO 4924 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-03-05 17:36:21.075  INFO 4924 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-03-05 17:36:21.088  INFO 4924 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-03-05 17:36:21.097  INFO 4924 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-03-05 17:36:32.973  INFO 4998 --- [main] com.example.jpa.JpaApplication           : Starting JpaApplication using Java 1.8.0_191 on Sigmob-Mac-mini.local with PID 4998 (/Users/happyelements/IdeaProjects/learn-jpa/target/classes started by happyelements in /Users/happyelements/IdeaProjects/learn-jpa)
+2021-03-05 17:36:32.979  INFO 4998 --- [main] com.example.jpa.JpaApplication           : No active profile set, falling back to default profiles: default
+2021-03-05 17:36:34.597  INFO 4998 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-03-05 17:36:34.762  INFO 4998 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 152 ms. Found 3 JPA repository interfaces.
+2021-03-05 17:36:35.252  INFO 4998 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'com.thebeastshop.forest.springboot.ForestAutoConfiguration' of type [com.thebeastshop.forest.springboot.ForestAutoConfiguration$$EnhancerBySpringCGLIB$$26966b34] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-03-05 17:36:35.280  INFO 4998 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'forestConfigurationProperties' of type [com.thebeastshop.forest.springboot.properties.ForestConfigurationProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-03-05 17:36:35.326  INFO 4998 --- [main] trationDelegate$BeanPostProcessorChecker : Bean '(inner bean)#b967222' of type [com.dtflys.forest.interceptor.SpringInterceptorFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-03-05 17:36:35.334  INFO 4998 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'forestConfiguration' of type [com.dtflys.forest.config.ForestConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-03-05 17:36:35.386  INFO 4998 --- [main] c.d.f.scanner.ClassPathClientScanner     : [Forest] Created Forest Client Bean with name 'myClient' and Proxy of 'com.example.jpa.client.MyClient' client interface
+2021-03-05 17:36:35.433  INFO 4998 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'myClient' of type [com.dtflys.forest.beans.ClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-03-05 17:36:36.166  INFO 4998 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-03-05 17:36:36.181  INFO 4998 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-03-05 17:36:36.182  INFO 4998 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.43]
+2021-03-05 17:36:36.351  INFO 4998 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-03-05 17:36:36.352  INFO 4998 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3192 ms
+2021-03-05 17:36:36.971  INFO 4998 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-03-05 17:36:37.011  INFO 4998 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.28.Final
+2021-03-05 17:36:37.113  INFO 4998 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-03-05 17:36:37.204  INFO 4998 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-03-05 17:36:37.398  INFO 4998 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-03-05 17:36:37.454  INFO 4998 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2021-03-05 17:36:38.485  INFO 4998 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-03-05 17:36:38.494  INFO 4998 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-03-05 17:36:39.591  WARN 4998 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-03-05 17:36:40.430  INFO 4998 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-03-05 17:36:41.267  INFO 4998 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-03-05 17:36:41.279  INFO 4998 --- [main] com.example.jpa.JpaApplication           : Started JpaApplication in 9.286 seconds (JVM running for 10.253)
+2021-03-05 17:36:56.588  INFO 4998 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-03-05 17:36:56.589  INFO 4998 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-03-05 17:36:56.591  INFO 4998 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2021-03-05 17:36:58.294  INFO 4998 --- [http-nio-8080-exec-2] c.e.jpa.event.user.UserCreateEvent       : 新建用户：测试复制大萨达
+2021-03-05 17:36:58.392  INFO 4998 --- [http-nio-8080-exec-2] c.e.j.core.CommonResultControllerAdvice  : com.example.jpa.dto.UserDto
+2021-03-05 17:36:58.401  INFO 4998 --- [http-nio-8080-exec-2] c.e.j.core.CommonResultControllerAdvice  : [interface com.example.jpa.dto.base.OutputConverter]
+2021-03-05 17:37:28.896  INFO 4998 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-03-05 17:37:28.898  INFO 4998 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-03-05 17:37:28.901  INFO 4998 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-03-05 17:37:28.905  INFO 4998 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-03-05 17:37:40.303  INFO 5036 --- [main] com.example.jpa.JpaApplication           : Starting JpaApplication using Java 1.8.0_191 on Sigmob-Mac-mini.local with PID 5036 (/Users/happyelements/IdeaProjects/learn-jpa/target/classes started by happyelements in /Users/happyelements/IdeaProjects/learn-jpa)
+2021-03-05 17:37:40.310  INFO 5036 --- [main] com.example.jpa.JpaApplication           : No active profile set, falling back to default profiles: default
+2021-03-05 17:37:42.236  INFO 5036 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-03-05 17:37:42.366  INFO 5036 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 109 ms. Found 3 JPA repository interfaces.
+2021-03-05 17:37:43.350  INFO 5036 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'com.thebeastshop.forest.springboot.ForestAutoConfiguration' of type [com.thebeastshop.forest.springboot.ForestAutoConfiguration$$EnhancerBySpringCGLIB$$2fefcdfb] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-03-05 17:37:43.394  INFO 5036 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'forestConfigurationProperties' of type [com.thebeastshop.forest.springboot.properties.ForestConfigurationProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-03-05 17:37:43.454  INFO 5036 --- [main] trationDelegate$BeanPostProcessorChecker : Bean '(inner bean)#7af3874e' of type [com.dtflys.forest.interceptor.SpringInterceptorFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-03-05 17:37:43.462  INFO 5036 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'forestConfiguration' of type [com.dtflys.forest.config.ForestConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-03-05 17:37:43.517  INFO 5036 --- [main] c.d.f.scanner.ClassPathClientScanner     : [Forest] Created Forest Client Bean with name 'myClient' and Proxy of 'com.example.jpa.client.MyClient' client interface
+2021-03-05 17:37:43.535  INFO 5036 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'myClient' of type [com.dtflys.forest.beans.ClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-03-05 17:37:44.010  INFO 5036 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-03-05 17:37:44.020  INFO 5036 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-03-05 17:37:44.021  INFO 5036 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.43]
+2021-03-05 17:37:44.195  INFO 5036 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-03-05 17:37:44.196  INFO 5036 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3821 ms
+2021-03-05 17:37:44.681  INFO 5036 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-03-05 17:37:44.760  INFO 5036 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.28.Final
+2021-03-05 17:37:45.152  INFO 5036 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-03-05 17:37:45.295  INFO 5036 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-03-05 17:37:45.495  INFO 5036 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-03-05 17:37:45.523  INFO 5036 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2021-03-05 17:37:46.742  INFO 5036 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-03-05 17:37:46.758  INFO 5036 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-03-05 17:37:48.793  WARN 5036 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-03-05 17:37:49.749  INFO 5036 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-03-05 17:37:50.433  INFO 5036 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-03-05 17:37:50.446  INFO 5036 --- [main] com.example.jpa.JpaApplication           : Started JpaApplication in 11.548 seconds (JVM running for 14.089)
+2021-03-05 17:37:57.650  INFO 5036 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-03-05 17:37:57.652  INFO 5036 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-03-05 17:37:57.655  INFO 5036 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2021-03-05 17:38:03.795  INFO 5036 --- [http-nio-8080-exec-2] c.e.jpa.event.user.UserCreateEvent       : 新建用户：测试复制大萨达
+2021-03-05 17:38:07.009  INFO 5036 --- [http-nio-8080-exec-2] c.e.j.core.CommonResultControllerAdvice  : com.example.jpa.dto.UserDto
+2021-03-05 17:38:07.031  INFO 5036 --- [http-nio-8080-exec-2] c.e.j.core.CommonResultControllerAdvice  : [interface com.example.jpa.dto.base.OutputConverter]
+2021-03-05 17:38:20.582  INFO 5036 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-03-05 17:38:20.587  INFO 5036 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-03-05 17:38:20.596  INFO 5036 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-03-05 17:38:20.623  INFO 5036 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-03-05 17:38:32.586  INFO 5063 --- [main] com.example.jpa.JpaApplication           : Starting JpaApplication using Java 1.8.0_191 on Sigmob-Mac-mini.local with PID 5063 (/Users/happyelements/IdeaProjects/learn-jpa/target/classes started by happyelements in /Users/happyelements/IdeaProjects/learn-jpa)
+2021-03-05 17:38:32.594  INFO 5063 --- [main] com.example.jpa.JpaApplication           : No active profile set, falling back to default profiles: default
+2021-03-05 17:38:34.467  INFO 5063 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-03-05 17:38:34.584  INFO 5063 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 101 ms. Found 3 JPA repository interfaces.
+2021-03-05 17:38:36.857  INFO 5063 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'com.thebeastshop.forest.springboot.ForestAutoConfiguration' of type [com.thebeastshop.forest.springboot.ForestAutoConfiguration$$EnhancerBySpringCGLIB$$7ddaf496] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-03-05 17:38:37.039  INFO 5063 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'forestConfigurationProperties' of type [com.thebeastshop.forest.springboot.properties.ForestConfigurationProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-03-05 17:38:37.305  INFO 5063 --- [main] trationDelegate$BeanPostProcessorChecker : Bean '(inner bean)#4e83a98' of type [com.dtflys.forest.interceptor.SpringInterceptorFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-03-05 17:38:37.320  INFO 5063 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'forestConfiguration' of type [com.dtflys.forest.config.ForestConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-03-05 17:38:37.401  INFO 5063 --- [main] c.d.f.scanner.ClassPathClientScanner     : [Forest] Created Forest Client Bean with name 'myClient' and Proxy of 'com.example.jpa.client.MyClient' client interface
+2021-03-05 17:38:37.448  INFO 5063 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'myClient' of type [com.dtflys.forest.beans.ClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-03-05 17:38:38.983  INFO 5063 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-03-05 17:38:39.025  INFO 5063 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-03-05 17:38:39.026  INFO 5063 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.43]
+2021-03-05 17:38:39.208  INFO 5063 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-03-05 17:38:39.209  INFO 5063 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 6449 ms
+2021-03-05 17:38:40.482  INFO 5063 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-03-05 17:38:40.943  INFO 5063 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.28.Final
+2021-03-05 17:38:41.536  INFO 5063 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-03-05 17:38:41.945  INFO 5063 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-03-05 17:38:42.555  INFO 5063 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-03-05 17:38:42.640  INFO 5063 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2021-03-05 17:38:45.081  INFO 5063 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-03-05 17:38:45.149  INFO 5063 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-03-05 17:38:54.485  WARN 5063 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-03-05 17:38:56.571  INFO 5063 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-03-05 17:38:57.336  INFO 5063 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-03-05 17:38:57.349  INFO 5063 --- [main] com.example.jpa.JpaApplication           : Started JpaApplication in 26.69 seconds (JVM running for 29.623)
+2021-03-05 17:39:02.923  INFO 5063 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-03-05 17:39:02.925  INFO 5063 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-03-05 17:39:02.926  INFO 5063 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-03-05 17:39:03.675  INFO 5063 --- [http-nio-8080-exec-1] c.e.jpa.event.user.UserCreateEvent       : 新建用户：测试复制大萨达
+2021-03-05 17:39:11.199  INFO 5063 --- [http-nio-8080-exec-1] c.e.jpa.listener.UserEventListener       : UserEventListener: User(id=0, name=测试复制大萨达, password=null, birthday=null, updateTime=null, status=null)
+2021-03-05 17:39:11.479  INFO 5063 --- [http-nio-8080-exec-1] c.e.j.core.CommonResultControllerAdvice  : com.example.jpa.dto.UserDto
+2021-03-05 17:39:11.479  INFO 5063 --- [http-nio-8080-exec-1] c.e.j.core.CommonResultControllerAdvice  : [interface com.example.jpa.dto.base.OutputConverter]
+2021-03-05 17:39:43.226  INFO 5063 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-03-05 17:39:43.230  INFO 5063 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-03-05 17:39:43.240  INFO 5063 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-03-05 17:39:43.298  INFO 5063 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

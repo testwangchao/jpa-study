@@ -1,6 +1,7 @@
 package com.example.jpa.service;
 
 import com.example.jpa.dto.UserDto;
+import com.example.jpa.enums.UserStatusEnum;
 import com.example.jpa.param.UserInfo;
 import com.example.jpa.pojo.User;
 import com.example.jpa.service.base.CrudService;
@@ -41,5 +42,5 @@ public interface UserService extends CrudService<User, Integer> {
     @Transactional
     void deleteCreate(@NonNull UserInfo userInfo);
 
-
+    void setUserStatus(@NonNull UserInfo userInfo);
 }

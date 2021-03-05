@@ -11,5 +11,5 @@ public class UserInfo implements InputConverter<User> {
     @NotBlank(message = "用户名不能为空")
     private String name;
     private int id;
-    private UserStatusEnum status;
+    private int status;
 }

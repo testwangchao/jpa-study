@@ -29,6 +29,9 @@ public class CommonResultControllerAdvice implements ResponseBodyAdvice<Object> 
 
     @Override
     public Object beforeBodyWrite(Object o, MethodParameter methodParameter, MediaType mediaType, Class aClass, ServerHttpRequest serverHttpRequest, ServerHttpResponse serverHttpResponse) {
+        if (o == null) {
+            return BaseResponse.ok();
+        }
         MappingJacksonValue container = getOrCreateContainer(o);
         beforeBodyWriteInternal(container, mediaType, methodParameter, serverHttpRequest, serverHttpResponse);
         return container;

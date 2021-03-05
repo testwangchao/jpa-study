@@ -33,7 +33,7 @@ public class User extends BaseEntity{
     private Date updateTime;
 
     @Column(name = "status")
-    @Convert(converter = UserStatusConverter.class)
+//    @Convert(converter = UserStatusConverter.class)
     private UserStatusEnum status;
 
     @PrePersist

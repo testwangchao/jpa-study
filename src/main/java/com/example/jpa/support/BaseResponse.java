@@ -51,6 +51,9 @@ public class BaseResponse<T> {
      */
     @NonNull
     public static <T> BaseResponse<T> ok(@Nullable String message) {
+        if (message == null){
+            return ok("success", null);
+        }
         return ok(message, null);
     }
 
@@ -63,6 +66,11 @@ public class BaseResponse<T> {
      */
     public static <T> BaseResponse<T> ok(@NonNull T data) {
         return new BaseResponse<>(HttpStatus.OK.value(), HttpStatus.OK.getReasonPhrase(), data);
+    }
+
+    @NonNull
+    public static <T> BaseResponse<T> ok() {
+        return ok("success", null);
     }
 }
 

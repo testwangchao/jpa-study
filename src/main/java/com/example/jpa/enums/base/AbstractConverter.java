@@ -1,10 +1,14 @@
 package com.example.jpa.enums.base;
 
+import com.example.jpa.enums.UserStatusEnum;
 import com.example.jpa.enums.ValueEnum;
+import com.example.jpa.exceptions.NotFoundException;
 import com.example.jpa.utils.ReflectionUtils;
 
 import javax.persistence.AttributeConverter;
 import java.lang.reflect.Type;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 
 public abstract class AbstractConverter<E extends ValueEnum<V>, V>
@@ -15,7 +19,7 @@ public abstract class AbstractConverter<E extends ValueEnum<V>, V>
     @SuppressWarnings("unchecked")
     protected AbstractConverter() {
         Type enumType = Objects.requireNonNull(
-                ReflectionUtils.getParameterizedType(AbstractConverter.class, this.getClass()))
+                ReflectionUtils.getParameterizedTypeBySuperClass(AbstractConverter.class, this.getClass()))
                 .getActualTypeArguments()[0];
         this.clazz = (Class<E>) enumType;
     }
@@ -33,11 +37,26 @@ public abstract class AbstractConverter<E extends ValueEnum<V>, V>
 
     /**
      * 转换到实体上是desc
-     * @param code userStatusEnum code
+     * @param dbData userStatusEnum code
      * @return userStatusEnum desc
      */
     @Override
     public E convertToEntityAttribute(V dbData) {
         return dbData == null ? null:ValueEnum.valueToEnum(clazz, dbData);
+    }
+
+    /**
+     * 将请求参数的status状态映射到对应的枚举类上
+     * @return
+     */
+    public Map<Object, E> mapEnum(Integer viewEnum){
+        Map<Object, E> map = new HashMap<>();
+        for (E enums: clazz.getEnumConstants()){
+            map.put(enums.getValue(), enums);
+        }
+        if (!map.containsKey(viewEnum)){
+            throw new NotFoundException(String.format("error status: %s", viewEnum));
+        }
+        return map;
     }
 }
