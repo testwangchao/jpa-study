@@ -31,6 +31,6 @@ public class CustomAop {
         if (needManagerPower.mode()!=1){
             throw new NotFoundException("禁止访问");
         }
-        return "3423";
+        return proceedingJoinPoint.proceed();
     }
 }

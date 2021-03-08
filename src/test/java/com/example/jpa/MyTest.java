@@ -3,8 +3,12 @@ package com.example.jpa;
 import com.example.jpa.enums.UserStatusConverter;
 import com.example.jpa.pojo.User2;
 
+import com.example.jpa.utils.JsonUtils;
+import com.example.jpa.utils.OkHttpUtils;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import org.junit.jupiter.api.Test;
 
+import java.io.IOException;
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 import java.util.*;
@@ -193,9 +197,10 @@ public class MyTest {
     }
 
     @Test
-    public void test11() {
-
-        UserStatusConverter converter = new UserStatusConverter();
-        System.out.println(converter.mapEnum(3));
+    public void test11() throws IOException, InterruptedException {
+        HashMap<String, Object> map = new HashMap<>();
+        map.put("name", "测试1");
+        OkHttpUtils req = new OkHttpUtils();
+        req.postByJson("form",map);
     }
 }

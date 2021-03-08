@@ -1,7 +1,5 @@
 package com.example.jpa.controllers;
 
-import com.example.jpa.aops.NeedManagerPower;
-import com.example.jpa.client.MyClient;
 import com.example.jpa.dto.UserDto;
 import com.example.jpa.param.RoleInfo;
 import com.example.jpa.param.SetRole;
@@ -9,9 +7,8 @@ import com.example.jpa.param.UserInfo;
 import com.example.jpa.pojo.User;
 import com.example.jpa.service.UserRoleService;
 import com.example.jpa.service.UserService;
-import com.example.jpa.support.BaseResponse;
 import com.example.jpa.utils.JsonUtils;
-import com.fasterxml.jackson.core.JsonProcessingException;
+import com.example.jpa.utils.OkHttpUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Sort;
@@ -23,6 +20,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.io.IOException;
 import java.util.*;
 
 @Slf4j
@@ -101,9 +99,14 @@ public class UserController {
 //    }
 
     @PostMapping("setStatus")
-    @NeedManagerPower(mode = 2)
+//    @NeedManagerPower(mode = 1)
     public void setStatus(@RequestBody UserInfo userInfo){
 
         userService.setUserStatus(userInfo);
+    }
+
+    @PostMapping("sendform")
+    public Map<String, Object> sendRequest(@RequestBody Map<String,Object> map) throws IOException {
+        return JsonUtils.jsonToMap(OkHttpUtils.postForm(map).body().string());
     }
 }

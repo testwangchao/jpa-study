@@ -109,10 +109,8 @@ public class UserServiceImpl extends AbstractCrudService<User, Integer> implemen
 
     @Override
     public void setUserStatus(UserInfo userInfo) {
-        UserStatusConverter converter = new UserStatusConverter();
-        UserStatusEnum userStatus = converter.mapEnum(userInfo.getStatus()).get(userInfo.getStatus());
         User updateUser = getById(userInfo.getId());
-        updateUser.setStatus(userStatus);
+        updateUser.setStatus(userInfo.getStatus());
         this.update(updateUser);
     }
 }

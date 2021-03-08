@@ -94,4 +94,41 @@ public class JsonUtils {
     public static Map<String,Object> jsonToMap(@NonNull String json) throws JsonProcessingException {
         return jsonToMap(json, DEFAULT_JSON_MAPPER);
     }
+
+    /**
+     * Converts a map to the object specified type.
+     *
+     * @param sourceMap source map must not be empty
+     * @param type object type must not be null
+     * @param <T> target object type
+     * @return the object specified type
+     * @throws IOException throws when fail to convert
+     */
+    @NonNull
+    public static <T> T mapToObject(@NonNull Map<String, ?> sourceMap, @NonNull Class<T> type)
+            throws IOException {
+        return mapToObject(sourceMap, type, DEFAULT_JSON_MAPPER);
+    }
+
+    /**
+     * Converts a map to the object specified type.
+     *
+     * @param sourceMap source map must not be empty
+     * @param type object type must not be null
+     * @param objectMapper object mapper must not be null
+     * @param <T> target object type
+     * @return the object specified type
+     * @throws IOException throws when fail to convert
+     */
+    @NonNull
+    public static <T> T mapToObject(@NonNull Map<String, ?> sourceMap, @NonNull Class<T> type,
+                                    @NonNull ObjectMapper objectMapper) throws IOException {
+        Assert.notEmpty(sourceMap, "Source map must not be empty");
+
+        // Serialize the map
+        String json = objectToJson(sourceMap, objectMapper);
+
+        // Deserialize the json format of the map
+        return jsonToObject(json, type, objectMapper);
+    }
 }
